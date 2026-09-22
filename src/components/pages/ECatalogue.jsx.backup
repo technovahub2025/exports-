@@ -1,0 +1,218 @@
+﻿import { useEffect } from 'react';
+import './ECatalogue.css';
+
+const PDF_URL = '/assets/catalogue/Zaza-Exports-E-Catalogue.pdf';
+
+function loadScript(src, dataAttribute) {
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector(
+      `script[${dataAttribute}]`
+    );
+
+    if (existing) {
+      if (existing.dataset.loaded === 'true') {
+        resolve();
+        return;
+      }
+
+      existing.addEventListener('load', resolve, { once: true });
+      existing.addEventListener('error', reject, { once: true });
+      return;
+    }
+
+    const script = document.createElement('script');
+
+    script.src = src;
+    script.async = false;
+    script.setAttribute(dataAttribute, '');
+
+    script.onload = () => {
+      script.dataset.loaded = 'true';
+      resolve();
+    };
+
+    script.onerror = () => {
+      reject(new Error(`Failed to load ${src}`));
+    };
+
+    document.head.appendChild(script);
+  });
+}
+
+function loadStylesheet(href) {
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector(
+      `link[href="${href}"]`
+    );
+
+    if (existing) {
+      resolve();
+      return;
+    }
+
+    const link = document.createElement('link');
+
+    link.rel = 'stylesheet';
+    link.href = href;
+
+    link.onload = resolve;
+    link.onerror = () => {
+      reject(new Error(`Failed to load ${href}`));
+    };
+
+    document.head.appendChild(link);
+  });
+}
+
+function ECatalogue() {
+  useEffect(() => {
+    let cancelled = false;
+
+    async function initializeDFlip() {
+      try {
+        await loadStylesheet('/dflip/css/dflip.min.css');
+
+        if (!window.jQuery) {
+          await loadScript(
+            '/dflip/js/jquery.min.js',
+            'data-dflip-jquery'
+          );
+        }
+
+        if (cancelled) return;
+
+        /*
+         * Set DFlip paths BEFORE loading dflip.min.js.
+         */
+        window.dFlipLocation = '/dflip/';
+
+        /*
+         * Define the options BEFORE loading DFlip.
+         * This prevents DFlip's automatic document-ready
+         * initialization from running without the options.
+         */
+        window.option_df_2119 = {
+          outline: [],
+          autoEnableOutline: 'false',
+          autoEnableThumbnail: 'false',
+          overwritePDFOutline: 'false',
+
+          direction: '1',
+          pageSize: '0',
+
+          source: PDF_URL,
+
+          wpOptions: 'true',
+
+          viewerType: 'flipbook',
+
+          moreControls:
+            'download,pageMode,startPage,endPage,sound',
+
+          hideControls: '',
+
+          backgroundColor: '#777',
+
+          height: 700,
+
+          paddingLeft: '20',
+          paddingRight: '20',
+
+          controlsPosition: 'bottom',
+
+          duration: 800,
+
+          soundEnable: 'true',
+          enableDownload: 'true',
+
+          showSearchControl: 'false',
+          showPrintControl: 'false',
+
+          enableAnnotation: false,
+          enableAnalytics: 'false',
+
+          webgl: 'true',
+          hard: 'none',
+
+          maxTextureSize: '1600',
+
+          rangeChunkSize: '524288',
+
+          zoomRatio: 1.5,
+
+          stiffness: 3,
+
+          pageMode: '0',
+          singlePageMode: '0',
+
+          autoPlay: 'false',
+          autoPlayDuration: 5000,
+          autoPlayStart: 'false',
+
+          linkTarget: '2',
+
+          sharePrefix: 'flipbook-'
+        };
+
+        if (!window.DFLIP) {
+          await loadScript(
+            '/dflip/js/dflip.min.js',
+            'data-dflip-js'
+          );
+        }
+
+        if (cancelled) return;
+
+        /*
+         * Parse the existing DFlip book.
+         */
+        if (window.DFLIP?.parseBooks) {
+          window.DFLIP.parseBooks();
+        } else {
+          console.error('DFlip failed to initialize.');
+        }
+      } catch (error) {
+        console.error('DFlip initialization error:', error);
+      }
+    }
+
+    initializeDFlip();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  return (
+    <main className="ecatalogue">
+
+      <section className="ecatalogue__header">
+        <div className="ecatalogue__eyebrow">
+          <span>▣</span>
+          E-CATALOGUE
+        </div>
+
+        <h1>Our Products Catalogue</h1>
+
+        <p>
+          Explore our complete range of export products through our
+          interactive catalogue.
+        </p>
+      </section>
+
+      <section className="ecatalogue__viewer">
+
+        <div
+          className="_df_book df-lite"
+          id="df_2119"
+          data-title="Zaza Exports E-Catalogue"
+          wpoptions="true"
+        />
+
+      </section>
+
+    </main>
+  );
+}
+
+export default ECatalogue;

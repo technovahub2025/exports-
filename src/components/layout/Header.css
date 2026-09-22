@@ -1,0 +1,858 @@
+﻿/* =========================================================
+   ZAZA EXPORTS — MODERN HEADER
+========================================================= */
+
+.zaza-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(3, 37, 65, 0.97) 0%,
+      rgba(7, 65, 105, 0.96) 52%,
+      rgba(9, 82, 130, 0.95) 100%
+    );
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 8px 30px rgba(0, 20, 40, 0.16);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.zaza-header__container {
+  width: min(1280px, calc(100% - 40px));
+  min-height: 92px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 20% 65% 15%;
+  align-items: center;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.zaza-header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.zaza-header__logo a {
+  display: flex;
+  align-items: center;
+}
+
+.zaza-header__logo img {
+  display: block;
+  width: 190px;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  transform: none;
+}
+
+.zaza-header__logo a:hover img {
+  transform: scale(1.025);
+  filter: brightness(1.06);
+}
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.zaza-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.zaza-nav__link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-height: 44px;
+  margin: 0;
+  padding: 0 13px;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.94);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.zaza-nav__link::after {
+  content: "";
+
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: 3px;
+
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #ffca2f;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.25s ease;
+}
+
+.zaza-nav__link:hover,
+.zaza-nav__link:focus,
+.zaza-nav__link.active {
+  color: #ffffff;
+}
+
+.zaza-nav__link:hover::after,
+.zaza-nav__link.active::after {
+  transform: scaleX(1);
+}
+
+.zaza-nav__link:hover {
+  transform: translateY(-1px);
+}
+
+.zaza-nav__about-button {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.zaza-nav__products {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.zaza-nav__arrow {
+  font-size: 10px;
+  opacity: 0.8;
+
+  transition: transform 0.25s ease;
+}
+
+.zaza-nav__products:hover .zaza-nav__arrow {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   MAIN DROPDOWN
+========================================================= */
+
+.zaza-nav__products > .zaza-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+
+  width: 250px;
+  padding: 8px;
+
+  background: rgba(255, 255, 255, 0.98);
+
+  border: 1px solid rgba(7, 88, 133, 0.08);
+  border-radius: 14px;
+
+  box-shadow:
+    0 18px 50px rgba(0, 25, 50, 0.22);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease,
+    transform 0.22s ease;
+}
+
+.zaza-nav__products > .zaza-dropdown::before {
+  content: "";
+
+  position: absolute;
+  top: -6px;
+  left: 28px;
+
+  width: 12px;
+  height: 12px;
+
+  background: #ffffff;
+
+  transform: rotate(45deg);
+}
+
+.zaza-nav__products:hover > .zaza-dropdown,
+.zaza-nav__products:focus-within > .zaza-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(0);
+}
+
+/* =========================================================
+   DROPDOWN ITEMS
+========================================================= */
+
+.zaza-dropdown__item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  min-height: 42px;
+  padding: 10px 14px;
+
+  border-radius: 9px;
+
+  background: transparent;
+  color: #263746;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.35;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.zaza-dropdown__item:hover {
+  background: #eaf5fa;
+  color: #075985;
+  padding-left: 18px;
+}
+
+.zaza-dropdown__parent {
+  cursor: default;
+}
+
+/* =========================================================
+   NESTED DROPDOWNS
+========================================================= */
+
+.zaza-dropdown__nested {
+  position: relative;
+}
+
+.zaza-dropdown__nested > .zaza-dropdown--nested {
+  position: absolute;
+
+  top: -8px;
+  left: calc(100% + 6px);
+
+  width: 225px;
+  padding: 8px;
+
+  background: rgba(255, 255, 255, 0.98);
+
+  border: 1px solid rgba(7, 88, 133, 0.08);
+  border-radius: 14px;
+
+  box-shadow:
+    0 18px 50px rgba(0, 25, 50, 0.22);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateX(10px);
+
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease,
+    transform 0.22s ease;
+}
+
+.zaza-dropdown__nested:hover > .zaza-dropdown--nested {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateX(0);
+}
+
+.zaza-dropdown--wooden {
+  top: -8px !important;
+}
+
+/* =========================================================
+   E-CATALOGUE BUTTON
+========================================================= */
+
+.zaza-header__cta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.zaza-header__catalogue {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 46px;
+  padding: 0 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffca2f,
+      #ffd95a
+    );
+
+  color: #063b59;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.zaza-header__catalogue:hover {
+  transform: translateY(-2px);
+
+  background: #ffffff;
+
+  color: #075985;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.zaza-header__catalogue span {
+  font-size: 17px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.zaza-header__catalogue:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+.zaza-header__mobile-toggle {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+  margin: 0;
+
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 11px;
+
+  background: rgba(255,255,255,0.10);
+  color: #ffffff;
+
+  font-size: 26px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+/* Hide mobile menu by default */
+.zaza-mobile-menu {
+  display: none;
+}
+
+/* =========================================================
+   TABLET + MOBILE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .zaza-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 999999;
+
+    overflow: visible;
+  }
+
+  .zaza-header__container {
+    width: 100%;
+    min-height: 78px;
+
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .zaza-header__nav,
+  .zaza-header__cta {
+    display: none !important;
+  }
+
+  .zaza-header__logo {
+    flex: 1;
+  }
+
+  .zaza-header__mobile-toggle {
+    display: flex !important;
+    flex: 0 0 44px;
+  }
+
+  /* =======================================================
+     MOBILE MENU
+  ======================================================= */
+
+  .zaza-mobile-menu {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    box-sizing: border-box !important;
+
+    display: block !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background:
+      linear-gradient(
+        145deg,
+        #032541 0%,
+        #06466d 55%,
+        #075985 100%
+      ) !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    z-index: 1000000 !important;
+
+    transform: translateX(100%) !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+
+    pointer-events: none !important;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease,
+      visibility 0.3s ease !important;
+  }
+
+  /* OPEN STATE */
+
+  .zaza-mobile-menu.zaza-mobile-menu--open {
+    transform: translateX(0) !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    pointer-events: auto !important;
+  }
+
+  /* =======================================================
+     MOBILE MENU HEADER
+  ======================================================= */
+
+  .zaza-mobile-menu__header {
+    width: 100% !important;
+    min-height: 78px !important;
+
+    padding: 14px 16px !important;
+
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    border-bottom: 1px solid rgba(255,255,255,0.14) !important;
+  }
+
+  .zaza-mobile-menu__header img {
+    display: block !important;
+
+    width: auto !important;
+    max-width: 170px !important;
+    max-height: 48px !important;
+  }
+
+  .zaza-mobile-menu__close {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    flex: 0 0 44px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border: 0 !important;
+    border-radius: 10px !important;
+
+    background: #ffca2f !important;
+    color: #063b59 !important;
+
+    font-size: 28px !important;
+    line-height: 1 !important;
+
+    cursor: pointer !important;
+  }
+
+  /* =======================================================
+     NAVIGATION
+  ======================================================= */
+
+  .zaza-mobile-menu__nav {
+    display: block !important;
+
+    width: 100% !important;
+
+    padding: 12px 20px 30px !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+  }
+
+  .zaza-mobile-menu__nav > * {
+    box-sizing: border-box !important;
+  }
+
+  .zaza-mobile-link {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+    min-height: 50px !important;
+
+    padding: 13px 5px !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+
+    background: transparent !important;
+
+    color: #ffffff !important;
+
+    font-family: "Poppins", sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+
+    text-align: left !important;
+    text-decoration: none !important;
+
+    cursor: pointer !important;
+  }
+
+  .zaza-mobile-link:hover,
+  .zaza-mobile-link.active {
+    color: #ffca2f !important;
+  }
+
+  /* =======================================================
+     PRODUCTS
+  ======================================================= */
+
+  .zaza-mobile-submenu {
+    display: block !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 4px 0 8px 6px !important;
+    padding: 4px 0 4px 14px !important;
+
+    border-left: 2px solid rgba(255,202,47,0.55) !important;
+  }
+
+  .zaza-mobile-sublink {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+    min-height: 43px !important;
+
+    padding: 10px 5px !important;
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+
+    color: rgba(255,255,255,0.85) !important;
+
+    font-family: "Poppins", sans-serif !important;
+    font-size: 14px !important;
+
+    text-align: left !important;
+    text-decoration: none !important;
+
+    cursor: pointer !important;
+  }
+
+  .zaza-mobile-sublink:hover {
+    color: #ffca2f !important;
+  }
+
+  .zaza-mobile-nested {
+    display: block !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin-left: 5px !important;
+    padding-left: 13px !important;
+
+    border-left: 1px solid rgba(255,255,255,0.14) !important;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1025px) {
+
+  .zaza-header__mobile-toggle {
+    display: none !important;
+  }
+
+  .zaza-mobile-menu {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .zaza-header__container {
+    min-height: 74px;
+    padding: 0 12px;
+  }
+
+  .zaza-header__mobile-toggle {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    font-size: 24px;
+  }
+
+  .zaza-mobile-menu__header {
+    min-height: 74px !important;
+    padding: 12px !important;
+  }
+
+  .zaza-mobile-menu__close {
+    width: 40px !important;
+    height: 40px !important;
+    flex-basis: 40px !important;
+    font-size: 25px !important;
+  }
+}
+
+/* =========================================================
+   ABOUT SECTION SCROLL
+========================================================= */
+
+#about-company {
+  scroll-margin-top: 100px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .zaza-mobile-menu,
+  .zaza-mobile-link,
+  .zaza-mobile-sublink {
+    transition: none !important;
+  }
+}
+
+
+/* FINAL LOGO SIZE FIX */
+.zaza-header__logo {
+  width: 180px !important;
+  height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+  flex-shrink: 0 !important;
+}
+
+.zaza-header__logo a {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.zaza-header__logo img {
+  width: 180px !important;
+  height: 60px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  transform: none !important;
+}
+
+@media (max-width: 767px) {
+  .zaza-header__logo {
+    width: 150px !important;
+    height: 55px !important;
+  }
+
+  .zaza-header__logo img {
+    width: 150px !important;
+    height: 55px !important;
+  }
+}
+
+/* FINAL - BIG LOGO WITHOUT WIDENING HEADER */
+.zaza-header__logo {
+  width: 180px !important;
+  height: 60px !important;
+  flex: 0 0 180px !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+}
+
+.zaza-header__logo a {
+  display: flex !important;
+  align-items: center !important;
+  width: 180px !important;
+  height: 60px !important;
+  overflow: visible !important;
+}
+
+.zaza-header__logo img {
+  display: block !important;
+  width: 240px !important;
+  height: 60px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  transform: none !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 767px) {
+  .zaza-header__logo {
+    width: 150px !important;
+    flex-basis: 150px !important;
+  }
+
+  .zaza-header__logo a {
+    width: 150px !important;
+  }
+
+  .zaza-header__logo img {
+    width: 205px !important;
+    height: 55px !important;
+  }
+}

@@ -1,0 +1,387 @@
+﻿.services-cta{
+  position:relative;
+  width:100%;
+  min-height:350px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  isolation:isolate;
+  background:#075985;
+}
+
+.services-cta__image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  overflow:hidden;
+}
+
+.services-cta__image img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+
+  /* Move the truck/container upward into the content area */
+  object-position:center bottom;
+
+  transform:scale(1.02);
+}
+
+.services-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3,45,68,.72) 0%,
+      rgba(7,89,133,.58) 50%,
+      rgba(3,45,68,.72) 100%
+    );
+}
+
+.services-cta__content{
+  position:relative;
+  z-index:2;
+
+  width:min(680px, calc(100% - 40px));
+  min-height:350px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  padding:45px 20px;
+  box-sizing:border-box;
+
+  text-align:center;
+  color:#fff;
+}
+
+.services-cta__icon{
+  margin-bottom:12px;
+  font-size:34px;
+  line-height:1;
+}
+
+.services-cta__content h3{
+  margin:0 0 14px;
+
+  color:#fff;
+  font-family:"DM Sans", sans-serif;
+  font-size:42px;
+  font-weight:700;
+  line-height:1.15;
+}
+
+.services-cta__content p{
+  max-width:620px;
+  margin:0 0 28px;
+
+  color:#fff;
+  font-family:Poppins, sans-serif;
+  font-size:16px;
+  line-height:1.6;
+}
+
+.services-cta__button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  padding:14px 28px;
+
+  border:2px solid #ffca2f;
+  border-radius:10px;
+
+  background:#ffca2f;
+  color:#053b57;
+
+  font-family:Poppins, sans-serif;
+  font-size:15px;
+  font-weight:600;
+  text-decoration:none;
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
+}
+
+.services-cta__button span{
+  font-size:20px;
+  line-height:1;
+}
+
+.services-cta__button:hover{
+  transform:translateY(-3px);
+  background:#fff;
+  border-color:#fff;
+  color:#075985;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+@media(max-width:767px){
+
+  .services-cta{
+    min-height:360px;
+  }
+
+  .services-cta__image{
+    height:100%;
+  }
+
+  .services-cta__image img{
+    object-position:center bottom;
+  }
+
+  .services-cta__content{
+    width:calc(100% - 30px);
+    min-height:360px;
+    padding:40px 15px;
+  }
+
+  .services-cta__content h3{
+    font-size:30px;
+  }
+
+  .services-cta__content p{
+    font-size:14px;
+  }
+
+  .services-cta__button{
+    padding:12px 22px;
+    font-size:14px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .services-cta__button{
+    transition:none;
+  }
+}
+@media (min-width: 768px){
+
+  .services-cta{
+    min-height:350px;
+    height:350px;
+  }
+
+  .services-cta__image{
+    height:350px;
+  }
+
+  .services-cta__image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    /* Desktop: show more of the truck area */
+    object-position:center 72%;
+  }
+
+  .services-cta__content{
+    min-height:350px;
+    height:350px;
+    width:min(680px, calc(100% - 40px));
+  }
+
+}
+@media (min-width: 768px){
+  .services-cta__image img{
+    object-fit:cover;
+    object-position:center top;
+  }
+}
+@media (min-width: 768px){
+
+  .services-cta__image img{
+    width:100%;
+    height:auto;
+    min-height:100%;
+    object-fit:contain;
+    object-position:center center;
+
+    transform:scale(1.05) translateY(-18%);
+  }
+
+}
+
+/* Premium upward reveal */
+.services-cta{
+  position:relative;
+  z-index:2;
+  overflow:hidden;
+}
+
+.services-cta__content{
+  opacity:0;
+  transform:translateY(55px);
+  transition:
+    opacity .9s ease,
+    transform 1.25s cubic-bezier(.16,1,.3,1);
+}
+
+.services-cta__image{
+  opacity:0;
+  transform:translateY(45px) scale(1.04);
+  transition:
+    opacity 1s ease,
+    transform 1.4s cubic-bezier(.16,1,.3,1);
+}
+
+.services-cta.services-cta--visible .services-cta__content{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.services-cta.services-cta--visible .services-cta__image{
+  opacity:1;
+  transform:translateY(0) scale(1.04);
+}
+
+@media(prefers-reduced-motion:reduce){
+  .services-cta__content,
+  .services-cta__image{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+}
+/* =========================================
+   SERVICES CTA - VERTICAL STAGGER REVEAL
+   ========================================= */
+
+.services-cta__image{
+  opacity:1 !important;
+  transform:none !important;
+}
+
+.services-cta__content{
+  opacity:1 !important;
+  transform:none !important;
+}
+
+/* Every row starts below */
+.services-cta__content h3,
+.services-cta__content p,
+.services-cta__content .services-cta__button{
+  opacity:0;
+  transform:translate3d(0,70px,0);
+  transition:
+    opacity 0.8s ease,
+    transform 1.15s cubic-bezier(.16,1,.3,1);
+}
+
+/* Row 1 */
+.services-cta.services-cta--visible .services-cta__content h3{
+  opacity:1;
+  transform:translate3d(0,0,0);
+  transition-delay:0ms;
+}
+
+/* Row 2 */
+.services-cta.services-cta--visible .services-cta__content p{
+  opacity:1;
+  transform:translate3d(0,0,0);
+  transition-delay:220ms;
+}
+
+/* Row 3 */
+.services-cta.services-cta--visible .services-cta__content .services-cta__button{
+  opacity:1;
+  transform:translate3d(0,0,0);
+  transition-delay:440ms;
+}
+
+@media (max-width:767px){
+
+  .services-cta__content h3,
+  .services-cta__content p,
+  .services-cta__content .services-cta__button{
+    transform:translate3d(0,45px,0);
+  }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+  .services-cta__content h3,
+  .services-cta__content p,
+  .services-cta__content .services-cta__button{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+
+}
+/* =========================================
+   SERVICES CTA - SLOW RISE FROM BELOW
+   ========================================= */
+
+.services-cta__content h3,
+.services-cta__content p,
+.services-cta__content .services-cta__button{
+  opacity:0;
+  transform:translate3d(0,140px,0);
+}
+
+/* Heading rises first */
+.services-cta.services-cta--visible .services-cta__content h3{
+  opacity:1;
+  transform:translate3d(0,0,0);
+  transition:
+    opacity 1s ease,
+    transform 1.8s cubic-bezier(.16,1,.3,1);
+  transition-delay:0s;
+}
+
+/* Paragraph rises after heading */
+.services-cta.services-cta--visible .services-cta__content p{
+  opacity:1;
+  transform:translate3d(0,0,0);
+  transition:
+    opacity 1s ease,
+    transform 1.8s cubic-bezier(.16,1,.3,1);
+  transition-delay:.25s;
+}
+
+/* Button rises last */
+.services-cta.services-cta--visible .services-cta__content .services-cta__button{
+  opacity:1;
+  transform:translate3d(0,0,0);
+  transition:
+    opacity 1s ease,
+    transform 1.8s cubic-bezier(.16,1,.3,1);
+  transition-delay:.5s;
+}
+
+@media(max-width:767px){
+
+  .services-cta__content h3,
+  .services-cta__content p,
+  .services-cta__content .services-cta__button{
+    transform:translate3d(0,100px,0);
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  .services-cta__content h3,
+  .services-cta__content p,
+  .services-cta__content .services-cta__button{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+
+}

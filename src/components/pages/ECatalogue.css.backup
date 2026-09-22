@@ -1,0 +1,184 @@
+﻿.ecatalogue {
+  min-height: 100vh;
+
+  padding: 90px 24px 110px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f5f9fc 0%,
+      #ffffff 50%,
+      #f5f9fc 100%
+    );
+}
+
+
+/* --------------------------------
+   HEADER
+--------------------------------- */
+
+.ecatalogue__header {
+  max-width: 850px;
+
+  margin: 0 auto 45px;
+
+  text-align: center;
+}
+
+.ecatalogue__eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+
+  color: #075985;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.ecatalogue__header h1 {
+  margin: 0 0 15px;
+
+  color: #282828;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 44px;
+
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+.ecatalogue__header p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #666;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* --------------------------------
+   FLIPBOOK VIEWER
+--------------------------------- */
+
+.ecatalogue__viewer {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1280px;
+
+  height: 740px;
+
+  margin: 0 auto;
+
+  padding: 20px;
+
+  background: #777;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.16);
+
+  overflow: hidden;
+}
+
+
+/*
+ * Give DFlip the full available height.
+ */
+
+.ecatalogue__viewer .df-container,
+.ecatalogue__viewer .df-wrap {
+  width: 100% !important;
+
+  height: 700px !important;
+
+  min-height: 700px !important;
+}
+
+
+/*
+ * Keep the actual book centered.
+ */
+
+.ecatalogue__viewer .df-book-container {
+  margin: 0 auto;
+}
+
+
+/*
+ * Make sure DFlip controls remain visible.
+ */
+
+.ecatalogue__viewer .df-ui {
+  z-index: 20;
+}
+
+
+/*
+ * Keep the bottom controls above the viewer.
+ */
+
+.ecatalogue__viewer .df-controls {
+  z-index: 30;
+}
+
+
+/* --------------------------------
+   MOBILE
+--------------------------------- */
+
+@media (max-width: 767px) {
+
+  .ecatalogue {
+    padding: 60px 10px 75px;
+  }
+
+  .ecatalogue__header {
+    margin-bottom: 30px;
+  }
+
+  .ecatalogue__header h1 {
+    font-size: 30px;
+  }
+
+  .ecatalogue__header p {
+    font-size: 14px;
+  }
+
+  .ecatalogue__viewer {
+    height: 560px;
+
+    min-height: 560px;
+
+    padding: 8px;
+  }
+
+  .ecatalogue__viewer .df-container,
+  .ecatalogue__viewer .df-wrap {
+    height: 540px !important;
+
+    min-height: 540px !important;
+  }
+}

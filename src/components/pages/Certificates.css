@@ -1,0 +1,207 @@
+﻿.certificates-page {
+  background: white;
+}
+
+.certificates-page__hero {
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(5,59,87,.94), rgba(7,89,133,.78)),
+    url('/assets/images/shipping-from-shenzhen-to-US_please-use-this-image-for-all-3-lang-r8jhct8fb06nq5vl6p6c83rzlvth4pxtslkki2o9tk.webp')
+    center/cover no-repeat;
+}
+
+.certificates-page__hero-content {
+  width: min(1100px, calc(100% - 40px));
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+.certificates-page__eyebrow,
+.certificates-heading__label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--zaza-secondary);
+  font-weight: 600;
+}
+
+.certificates-page__eyebrow {
+  justify-content: center;
+}
+
+.certificates-page__hero h1 {
+  color: white;
+  font-size: clamp(42px, 6vw, 64px);
+  margin: 15px 0;
+}
+
+.certificates-page__breadcrumb {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.certificates-page__breadcrumb a {
+  color: white;
+}
+
+.certificates-container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.certificates-content {
+  padding: 100px 0 120px;
+}
+
+.certificates-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.certificates-heading__label {
+  justify-content: center;
+  color: var(--zaza-primary);
+}
+
+.certificates-heading h2 {
+  margin: 12px 0 0;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.certificate-card {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #e5edf2;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(5,59,87,.06);
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 45px rgba(5,59,87,.13);
+}
+
+.certificate-card__preview {
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  background: #f4f7f9;
+}
+
+.certificate-card__preview iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.certificate-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 65%,
+    rgba(5,59,87,.12)
+  );
+  color: var(--zaza-primary);
+  font-size: 35px;
+  opacity: .35;
+}
+
+.certificate-card__content {
+  padding: 22px;
+}
+
+.certificate-card__content h3 {
+  margin: 0 0 17px;
+  font-size: 19px;
+}
+
+.certificate-card__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 17px;
+  border-radius: 8px;
+  background: var(--zaza-primary);
+  color: white;
+  font-size: 14px;
+  transition: background .25s ease, transform .25s ease;
+}
+
+.certificate-card__button:hover {
+  background: var(--zaza-primary-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.certificate-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.22,1,.36,1);
+  transition-delay: var(--certificate-delay, 0s);
+}
+
+.certificate-animate--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1000px) {
+  .certificates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .certificates-page__hero {
+    min-height: 350px;
+  }
+
+  .certificates-content {
+    padding: 65px 0 80px;
+  }
+
+  .certificates-container {
+    width: min(100% - 30px, 1200px);
+  }
+
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-card__preview {
+    height: 390px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certificate-animate,
+  .certificate-card,
+  .certificate-card__button {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

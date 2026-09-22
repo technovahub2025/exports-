@@ -1,0 +1,487 @@
+﻿.popular-products {
+  padding: 100px 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.popular-products__container {
+  width: min(1280px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.popular-products__heading {
+  max-width: 700px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.popular-products__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #075985;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.popular-products__eyebrow span {
+  font-size: 16px;
+}
+
+.popular-products__heading h2 {
+  margin: 0 0 15px;
+  color: #282828;
+  font-family: "DM Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.popular-products__heading p {
+  margin: 0;
+  color: #666666;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.popular-products__grid {
+  display: block;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.popular-products__card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  opacity: 0;
+  transform: translateY(70px);
+
+  transition:
+    opacity 0.7s ease var(--reveal-delay),
+    transform 0.7s ease var(--reveal-delay),
+    box-shadow 0.25s ease;
+}
+
+.popular-products__card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popular-products__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.popular-products__image-link {
+  display: block;
+}
+
+.popular-products__image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: #f5f9fc;
+}
+
+.popular-products__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.popular-products__card:hover .popular-products__image img {
+  transform: scale(1.05);
+}
+
+.popular-products__content {
+  padding: 22px 24px 25px;
+}
+
+.popular-products__content h3 {
+  margin: 0 0 18px;
+  color: #075985;
+  font-family: "DM Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.popular-products__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #282828;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.popular-products__button span {
+  color: #075985;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.popular-products__button:hover span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) { .popular-products { padding: 80px 0; } }
+
+@media (max-width: 767px) {
+  .popular-products {
+    padding: 65px 0;
+  }
+
+  .popular-products__container {
+    width: calc(100% - 30px);
+  }
+
+  .popular-products__heading {
+    margin-bottom: 35px;
+  }
+
+  .popular-products__heading h2 {
+    font-size: 30px;
+  }
+
+  .popular-products__heading p {
+    font-size: 14px;
+  }
+
+  
+
+  .popular-products__image {
+    height: 250px;
+  }
+}
+
+
+/* First row */
+
+.popular-products__row:nth-child(1) {
+  margin-bottom: 30px;
+}
+
+/* Second and later rows */
+
+.popular-products__row:nth-child(n + 2) {
+  transition-delay: 180ms;
+}
+
+/* Row becomes visible */
+
+.popular-products__row--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+/* Cards themselves do NOT animate individually */
+
+.popular-products__row .popular-products__card {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Hover */
+
+.popular-products__row .popular-products__card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+  .popular-products__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .popular-products__row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    transform: translate3d(0, 55px, 0) scale(0.97);
+
+    transition-duration: 0.9s;
+  }
+
+  .popular-products__row:nth-child(1),
+  .popular-products__row:nth-child(n + 2) {
+    margin-bottom: 25px;
+    transition-delay: 0ms;
+  }
+
+  .popular-products__row--visible {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .popular-products__row {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+}
+
+
+
+
+/* =========================================
+   PRODUCT ROW - RISE FROM BELOW
+========================================= */
+
+.popular-products__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+
+  transform: translateY(180px);
+
+  transition:
+    transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: transform;
+}
+
+.popular-products__row--visible {
+  transform: translateY(0);
+}
+
+
+/* Second row enters slightly later */
+
+.popular-products__row:nth-child(n + 2) {
+  transition-delay: 180ms;
+}
+
+
+/* Cards remain completely normal */
+
+.popular-products__row .popular-products__card {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+
+/* Normal hover after entrance */
+
+.popular-products__row .popular-products__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+  .popular-products__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    transform: translateY(150px);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .popular-products__row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    transform: translateY(120px);
+
+    transition-duration: 1s;
+  }
+
+  .popular-products__row--visible {
+    transform: translateY(0);
+  }
+
+  .popular-products__row:nth-child(n + 2) {
+    transition-delay: 120ms;
+  }
+
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .popular-products__row {
+    transform: none;
+    transition: none;
+  }
+
+}
+
+/* =========================================
+   PRODUCT ROW - PREMIUM RISING ENTRANCE
+========================================= */
+
+.popular-products__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+
+  /* Start deep below the section */
+  transform: translate3d(0, 170px, 0);
+
+  /* Slow, elegant movement */
+  transition:
+    transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: transform;
+}
+
+.popular-products__row--visible {
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* =========================================
+   ROW TIMING
+========================================= */
+
+/* First row */
+
+.popular-products__row:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+/* Following rows */
+
+.popular-products__row:nth-child(n + 2) {
+  transition-delay: 220ms;
+}
+
+
+/* =========================================
+   CARD - NORMAL STATE
+========================================= */
+
+.popular-products__row .popular-products__card {
+  opacity: 1;
+  transform: none;
+  filter: none;
+
+  transition:
+    box-shadow 0.4s ease,
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================
+   PREMIUM HOVER
+========================================= */
+
+.popular-products__row .popular-products__card:hover {
+  transform: translate3d(0, -8px, 0);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+  .popular-products__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    transform: translate3d(0, 145px, 0);
+
+    transition-duration: 1.4s;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .popular-products__row {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    transform: translate3d(0, 120px, 0);
+
+    transition-duration: 1.25s;
+  }
+
+  .popular-products__row--visible {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .popular-products__row:nth-child(n + 2) {
+    transition-delay: 150ms;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .popular-products__row {
+    transform: none;
+    transition: none;
+  }
+
+}

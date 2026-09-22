@@ -1,0 +1,108 @@
+.need-services {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 20px;
+  background-image: url("/assets/images/footer-bg-1.webp");
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.need-services__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--zaza-primary);
+  opacity: 0.88;
+  z-index: -1;
+}
+
+.need-services__container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.need-services__content {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.need-services__eyebrow {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--zaza-yellow);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.need-services h2 {
+  margin: 0 0 20px;
+  color: var(--zaza-white);
+  font-family: "DM Sans", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.need-services p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  color: var(--zaza-white);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.need-services__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 2px solid var(--zaza-yellow);
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ffca2f, #ffd85c);
+  color: var(--zaza-primary-dark);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.need-services__button span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.need-services__button:hover {
+  transform: translateY(-2px);
+  background: var(--zaza-white);
+  color: var(--zaza-primary);
+}
+
+@media (max-width: 767px) {
+  .need-services {
+    padding: 65px 20px;
+  }
+
+  .need-services h2 {
+    font-size: 30px;
+  }
+
+  .need-services p {
+    font-size: 14px;
+  }
+
+  .need-services__eyebrow {
+    font-size: 14px;
+  }
+
+  .need-services__button {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+}

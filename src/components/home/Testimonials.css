@@ -1,0 +1,465 @@
+﻿.zaza-testimonials {
+  position: relative;
+  width: 100%;
+  padding: 65px 20px 90px;
+  overflow: hidden;
+
+  background-color: #F9F4F2;
+  background-image: url('/assets/images/World-map.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.zaza-testimonials__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(249, 244, 242, 0.91);
+  z-index: 0;
+}
+
+.zaza-testimonials__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.zaza-testimonials__heading {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+.zaza-testimonials__eyebrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #282828;
+}
+
+.zaza-testimonials__eyebrow-icon {
+  color: #075985;
+}
+
+.zaza-testimonials__heading h2 {
+  margin: 0;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.15;
+
+  color: #075985;
+}
+
+
+/* Main area */
+
+.zaza-testimonials__stage {
+  position: relative;
+
+  width: 100%;
+  max-width: 1000px;
+  height: 470px;
+
+  margin: 15px auto 0;
+}
+
+
+/* ============================= */
+/* SURROUNDING CUSTOMER IMAGES */
+/* ============================= */
+
+.zaza-testimonials__decor {
+  position: absolute;
+
+  display: block;
+
+  object-fit: cover;
+
+  /*
+    IMPORTANT:
+    Makes every surrounding image perfectly circular.
+  */
+  border-radius: 50%;
+
+  /*
+    White circular border like the original style.
+  */
+  border: 5px solid #FFFFFF;
+
+  /*
+    Keeps them visually separated from the background.
+  */
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* Top-left */
+
+.zaza-testimonials__decor--1 {
+  width: 75px;
+  height: 75px;
+
+  left: 8%;
+  top: 45px;
+}
+
+
+/* Top-right */
+
+.zaza-testimonials__decor--2 {
+  width: 90px;
+  height: 90px;
+
+  right: 7%;
+  top: 40px;
+}
+
+
+/* Middle-left */
+
+.zaza-testimonials__decor--3 {
+  width: 80px;
+  height: 80px;
+
+  left: 2%;
+  top: 190px;
+}
+
+
+/* Middle-right */
+
+.zaza-testimonials__decor--4 {
+  width: 85px;
+  height: 85px;
+
+  right: 2%;
+  top: 190px;
+}
+
+
+/* Bottom-left */
+
+.zaza-testimonials__decor--5 {
+  width: 75px;
+  height: 75px;
+
+  left: 14%;
+  bottom: 35px;
+}
+
+
+/* Bottom-right */
+
+.zaza-testimonials__decor--6 {
+  width: 75px;
+  height: 75px;
+
+  right: 14%;
+  bottom: 35px;
+}
+
+
+/* ============================= */
+/* MAIN QUOTE */
+/* ============================= */
+
+.zaza-testimonials__quote {
+  position: absolute;
+
+  left: 50%;
+  top: 15px;
+
+  transform: translateX(-50%);
+
+  font-family: Georgia, serif;
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 1;
+
+  color: #075985;
+
+  z-index: 3;
+}
+
+
+/* ============================= */
+/* REVIEW */
+/* ============================= */
+
+.zaza-testimonials__review {
+  position: absolute;
+
+  left: 50%;
+  top: 105px;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 180px);
+  max-width: 680px;
+
+  text-align: center;
+
+  z-index: 4;
+}
+
+.zaza-testimonials__review p {
+  margin: 0 auto 24px;
+
+  max-width: 680px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+
+  color: #282828;
+}
+
+
+/* Stars */
+
+.zaza-testimonials__stars {
+  margin-bottom: 24px;
+
+  font-family: Arial, sans-serif;
+  font-size: 19px;
+  letter-spacing: 2px;
+
+  color: #FFCA2F;
+}
+
+
+/* ============================= */
+/* MAIN CUSTOMER */
+/* ============================= */
+
+.zaza-testimonials__customer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zaza-testimonials__customer img {
+  display: block;
+
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 10px;
+
+  object-fit: cover;
+
+  /* Main customer image circle */
+  border-radius: 50%;
+
+  border: 4px solid #FFFFFF;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.zaza-testimonials__customer h3 {
+  margin: 0;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+
+  color: #075985;
+}
+
+.zaza-testimonials__customer span {
+  margin-top: 5px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+
+  color: #282828;
+}
+
+
+/* ============================= */
+/* DOTS */
+/* ============================= */
+
+.zaza-testimonials__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 5px;
+}
+
+.zaza-testimonials__dot {
+  width: 9px;
+  height: 9px;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background: #075985;
+
+  opacity: 0.35;
+
+  cursor: pointer;
+}
+
+.zaza-testimonials__dot.active {
+  width: 11px;
+  height: 11px;
+
+  opacity: 1;
+}
+
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width: 1024px) {
+
+  .zaza-testimonials {
+    padding: 80px 20px 100px;
+  }
+
+  .zaza-testimonials__stage {
+    max-width: 800px;
+  }
+
+  .zaza-testimonials__decor--1 {
+    left: 3%;
+  }
+
+  .zaza-testimonials__decor--2 {
+    right: 3%;
+  }
+
+  .zaza-testimonials__decor--5 {
+    left: 8%;
+  }
+
+  .zaza-testimonials__decor--6 {
+    right: 8%;
+  }
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 767px) {
+
+  .zaza-testimonials {
+    padding: 70px 20px 80px;
+    background-size: auto 100%;
+  }
+
+  .zaza-testimonials__heading h2 {
+    font-size: 30px;
+  }
+
+  .zaza-testimonials__stage {
+    height: 480px;
+    margin-top: 20px;
+  }
+
+  .zaza-testimonials__quote {
+    top: 5px;
+    font-size: 65px;
+  }
+
+  .zaza-testimonials__review {
+  position: absolute;
+
+  left: 50%;
+  top: 105px;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 180px);
+  max-width: 680px;
+
+  text-align: center;
+
+  z-index: 4;
+}
+
+  .zaza-testimonials__review p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .zaza-testimonials__customer img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .zaza-testimonials__customer h3 {
+    font-size: 20px;
+  }
+
+
+  /* Smaller surrounding circles */
+
+  .zaza-testimonials__decor--1 {
+    width: 48px;
+    height: 48px;
+
+    left: 1%;
+    top: 40px;
+  }
+
+  .zaza-testimonials__decor--2 {
+    width: 50px;
+    height: 50px;
+
+    right: 1%;
+    top: 40px;
+  }
+
+  .zaza-testimonials__decor--3 {
+    width: 48px;
+    height: 48px;
+
+    left: 0;
+    top: 230px;
+  }
+
+  .zaza-testimonials__decor--4 {
+    width: 48px;
+    height: 48px;
+
+    right: 0;
+    top: 230px;
+  }
+
+  .zaza-testimonials__decor--5,
+  .zaza-testimonials__decor--6 {
+    display: none;
+  }
+}
+
+
+
+
+

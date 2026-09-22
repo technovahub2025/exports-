@@ -1,0 +1,1039 @@
+﻿/* =========================================================
+   PAYMENT TERMS PAGE
+   ========================================================= */
+
+.payment-page {
+  background: #ffffff;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.payment-hero {
+  position: relative;
+  min-height: 420px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #053b57 0%,
+      #075985 55%,
+      #0b6f9e 100%
+    );
+
+  overflow: hidden;
+}
+
+.payment-hero::before,
+.payment-hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.payment-hero::before {
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: -170px;
+  background: rgba(255, 202, 47, 0.12);
+}
+
+.payment-hero::after {
+  width: 300px;
+  height: 300px;
+  left: -120px;
+  bottom: -150px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.payment-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.payment-hero__content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1280px, calc(100% - 40px));
+
+  text-align: center;
+}
+
+.payment-hero h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.payment-hero__breadcrumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 20px;
+
+  color: #ffffff;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+.payment-hero__breadcrumb a {
+  color: #ffca2f;
+  text-decoration: none;
+}
+
+.payment-hero__breadcrumb span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================================
+   MAIN PAYMENT SECTION
+   ========================================================= */
+
+.payment-main {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.payment-main__inner {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+}
+
+.payment-main__top {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 75px;
+  align-items: center;
+}
+
+/* =========================================================
+   EXPERIENCE IMAGE
+   ========================================================= */
+
+.payment-experience {
+  position: relative;
+
+  min-height: 500px;
+
+  border-radius: 14px;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateX(-45px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.payment-experience--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.payment-experience img {
+  display: block;
+
+  width: 100%;
+  height: 500px;
+
+  object-fit: cover;
+
+  transition: transform 1s ease;
+}
+
+.payment-experience:hover img {
+  transform: scale(1.04);
+}
+
+.payment-experience__badge {
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+
+  padding: 22px 28px;
+
+  background: rgba(7, 89, 133, 0.94);
+
+  border-left: 5px solid #ffca2f;
+  border-radius: 8px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+.payment-experience__badge h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.payment-experience__badge span {
+  color: #ffca2f;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.payment-content {
+  min-width: 0;
+}
+
+.payment-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 14px;
+
+  color: #075985;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.payment-eyebrow svg {
+  color: #ffca2f;
+  font-size: 18px;
+}
+
+.payment-content__title,
+.inco-title {
+  margin: 0 0 28px;
+
+  color: #282828;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* =========================================================
+   PAYMENT METHODS
+   ========================================================= */
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  margin-bottom: 28px;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 13px 16px;
+
+  background: #f5f9fc;
+
+  border-radius: 8px;
+
+  color: #282828;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+
+  opacity: 0;
+  transform: translateX(35px);
+
+  transition:
+    opacity 0.65s ease var(--payment-delay),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--payment-delay),
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.payment-method--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.payment-method:hover {
+  background: #eaf5fa;
+}
+
+.payment-method__icon {
+  flex: 0 0 38px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #075985;
+  color: #ffca2f;
+
+  border-radius: 50%;
+}
+
+.payment-method__icon svg {
+  font-size: 15px;
+}
+
+.payment-description {
+  margin: 0;
+
+  color: #555555;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.payment-description--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.payment-description strong {
+  color: #075985;
+}
+
+/* =========================================================
+   INCO TERMS
+   ========================================================= */
+
+.inco-section {
+  padding: 100px 20px;
+
+  background: #f5f9fc;
+}
+
+.inco-section__inner {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.inco-image {
+  overflow: hidden;
+  border-radius: 12px;
+
+  opacity: 0;
+  transform: translateX(-45px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.inco-image--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.inco-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  transition: transform 0.8s ease;
+}
+
+.inco-image:hover img {
+  transform: scale(1.035);
+}
+
+.inco-title {
+  margin-bottom: 30px;
+}
+
+.inco-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.inco-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  color: #444444;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+
+  opacity: 0;
+  transform: translateX(35px);
+
+  transition:
+    opacity 0.65s ease var(--payment-delay),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--payment-delay);
+}
+
+.inco-item--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.inco-item svg {
+  flex: 0 0 auto;
+
+  margin-top: 4px;
+
+  color: #075985;
+  font-size: 16px;
+}
+
+/* =========================================================
+   GENERIC ANIMATION
+   ========================================================= */
+
+.payment-animate {
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.payment-animate--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .payment-main,
+  .inco-section {
+    padding: 80px 20px;
+  }
+
+  .payment-main__top,
+  .inco-section__inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .payment-experience {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .inco-image {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  .payment-hero {
+    min-height: 340px;
+  }
+
+  .payment-hero h1 {
+    font-size: 40px;
+  }
+
+  .payment-main,
+  .inco-section {
+    padding: 65px 18px;
+  }
+
+  .payment-experience {
+    min-height: 350px;
+  }
+
+  .payment-experience img {
+    height: 350px;
+  }
+
+  .payment-experience__badge {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    padding: 17px 18px;
+  }
+
+  .payment-experience__badge h2 {
+    font-size: 21px;
+  }
+
+  .payment-content__title,
+  .inco-title {
+    font-size: 30px;
+  }
+
+  .payment-method {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .payment-description,
+  .inco-item {
+    font-size: 14px;
+  }
+
+  .inco-section__inner {
+    gap: 35px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .payment-animate,
+  .payment-animate--visible,
+  .payment-method,
+  .payment-method--visible,
+  .payment-description,
+  .payment-description--visible,
+  .payment-experience,
+  .payment-experience--visible,
+  .inco-image,
+  .inco-image--visible,
+  .inco-item,
+  .inco-item--visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/* =========================================================
+   EXPERIENCE BADGE - VISIBLE SLIDE-IN ANIMATION
+   ========================================================= */
+
+.payment-experience__badge {
+  opacity: 0;
+  transform: translateY(70px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.payment-experience--visible .payment-experience__badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keep the movement visible on mobile */
+@media (max-width: 767px) {
+  .payment-experience__badge {
+    transform: translateY(55px);
+  }
+
+  .payment-experience--visible .payment-experience__badge {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .payment-experience__badge,
+  .payment-experience--visible .payment-experience__badge {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/* FIX EXPERIENCE BADGE ANIMATION */
+
+.payment-experience__badge {
+  opacity: 0;
+  transform: translateY(70px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.payment-experience.payment-animate--visible .payment-experience__badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 767px) {
+  .payment-experience__badge {
+    transform: translateY(55px);
+  }
+
+  .payment-experience.payment-animate--visible .payment-experience__badge {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .payment-experience__badge,
+  .payment-experience.payment-animate--visible .payment-experience__badge {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* =========================================================
+   PAYMENT TERMS - FINAL HERO CLEANUP
+   Remove every secondary background/layer inside hero
+   ========================================================= */
+
+.payment-hero {
+  position: relative !important;
+  overflow: hidden !important;
+
+  background:
+    linear-gradient(
+      rgba(5, 59, 87, 0.14),
+      rgba(5, 59, 87, 0.14)
+    ),
+    url('/assets/images/container1.png') !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Remove all decorative layers */
+.payment-hero::before,
+.payment-hero::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Remove the original overlay */
+.payment-hero__overlay {
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* The content itself must have absolutely no background */
+.payment-hero__content {
+  position: relative !important;
+  z-index: 5 !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Breadcrumb must also be transparent */
+.payment-hero__breadcrumb {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove any accidental backgrounds from direct children */
+.payment-hero > * {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Remove pseudo-elements from hero children */
+.payment-hero > *::before,
+.payment-hero > *::after {
+  content: none !important;
+  display: none !important;
+}
+/* =========================================================
+   PAYMENT TERMS HERO - DEFINITIVE FIX
+   ========================================================= */
+
+.payment-hero {
+  position: relative !important;
+  overflow: hidden !important;
+
+  background-image:
+    linear-gradient(
+      rgba(5, 59, 87, 0.14),
+      rgba(5, 59, 87, 0.14)
+    ),
+    url('/assets/images/container1.png') !important;
+
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+
+  background-color: transparent !important;
+}
+
+/* Overlay exists in JSX but must contribute NOTHING */
+.payment-hero > .payment-hero__overlay {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Content must be completely transparent */
+.payment-hero > .payment-hero__content {
+  position: relative !important;
+  z-index: 10 !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  box-shadow: none !important;
+}
+
+/* Nothing inside the content can create a background */
+.payment-hero__content h1,
+.payment-hero__breadcrumb,
+.payment-hero__breadcrumb a,
+.payment-hero__breadcrumb span {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Absolutely no pseudo-elements in this hero */
+.payment-hero::before,
+.payment-hero::after,
+.payment-hero__overlay::before,
+.payment-hero__overlay::after,
+.payment-hero__content::before,
+.payment-hero__content::after,
+.payment-hero__breadcrumb::before,
+.payment-hero__breadcrumb::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* =========================================================
+   PAYMENT TERMS - PREMIUM PRODUCT-DETAIL STYLE ANIMATION
+   ========================================================= */
+
+.payment-page {
+  overflow-x: clip;
+}
+
+/* ---------------------------------------------------------
+   MAIN PAYMENT SECTION
+   Image comes from far left
+   Content comes from far right
+   --------------------------------------------------------- */
+
+.payment-main__top {
+  overflow: visible;
+}
+
+.payment-experience {
+  opacity: 0;
+  transform: translate3d(-35vw, 0, 0);
+  transition:
+    opacity 0.55s ease-out,
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.payment-experience.payment-animate--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.payment-content {
+  opacity: 0;
+  transform: translate3d(35vw, 0, 0);
+  transition:
+    opacity 0.55s ease-out,
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.03s;
+  will-change: transform, opacity;
+}
+
+.payment-content.payment-animate--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* ---------------------------------------------------------
+   Payment content elements
+   --------------------------------------------------------- */
+
+.payment-content .payment-eyebrow,
+.payment-content__title,
+.payment-method,
+.payment-description {
+  opacity: 0;
+}
+
+/* Heading */
+.payment-content .payment-eyebrow {
+  transform: translate3d(0, 45px, 0);
+  transition:
+    opacity 0.7s ease,
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.payment-content__title {
+  transform: translate3d(0, 55px, 0);
+  transition:
+    opacity 0.7s ease,
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.08s;
+}
+
+/* Payment cards */
+.payment-method {
+  transform: translate3d(0, 90px, 0);
+  transition:
+    opacity 0.7s ease var(--payment-delay),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--payment-delay),
+    background 0.3s ease;
+}
+
+/* Description */
+.payment-description {
+  transform: translate3d(0, 75px, 0);
+  transition:
+    opacity 0.75s ease 0.55s,
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.55s;
+}
+
+/* When content enters */
+.payment-content.payment-animate--visible .payment-eyebrow,
+.payment-content.payment-animate--visible .payment-content__title,
+.payment-content.payment-animate--visible .payment-method,
+.payment-content.payment-animate--visible .payment-description {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* ---------------------------------------------------------
+   EXPERIENCE BADGE
+   Comes upward from below the image
+   --------------------------------------------------------- */
+
+.payment-experience__badge {
+  opacity: 0;
+  transform: translate3d(0, 75px, 0);
+  transition:
+    opacity 0.8s ease 0.35s,
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+
+.payment-experience.payment-animate--visible
+.payment-experience__badge {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* ---------------------------------------------------------
+   INCO SECTION
+   --------------------------------------------------------- */
+
+.inco-section__inner {
+  overflow: visible;
+}
+
+.inco-image {
+  opacity: 0;
+  transform: translate3d(-35vw, 0, 0);
+  transition:
+    opacity 0.55s ease-out,
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.inco-image.payment-animate--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.inco-content {
+  opacity: 0;
+  transform: translate3d(35vw, 0, 0);
+  transition:
+    opacity 0.55s ease-out,
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.03s;
+  will-change: transform, opacity;
+}
+
+.inco-content.payment-animate--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* ---------------------------------------------------------
+   INCO CONTENT
+   --------------------------------------------------------- */
+
+.inco-content .payment-eyebrow,
+.inco-title,
+.inco-item {
+  opacity: 0;
+}
+
+/* Eyebrow */
+.inco-content .payment-eyebrow {
+  transform: translate3d(0, 45px, 0);
+  transition:
+    opacity 0.7s ease,
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Heading */
+.inco-title {
+  transform: translate3d(0, 55px, 0);
+  transition:
+    opacity 0.7s ease,
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.08s;
+}
+
+/* INCO rows */
+.inco-item {
+  transform: translate3d(0, 90px, 0);
+  transition:
+    opacity 0.7s ease var(--payment-delay),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--payment-delay);
+}
+
+/* When content enters */
+.inco-content.payment-animate--visible .payment-eyebrow,
+.inco-content.payment-animate--visible .inco-title,
+.inco-content.payment-animate--visible .inco-item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   Everything comes from below
+   --------------------------------------------------------- */
+
+@media (max-width: 767px) {
+
+  .payment-experience,
+  .payment-content,
+  .inco-image,
+  .inco-content {
+    transform: translate3d(0, 70px, 0);
+  }
+
+  .payment-experience.payment-animate--visible,
+  .payment-content.payment-animate--visible,
+  .inco-image.payment-animate--visible,
+  .inco-content.payment-animate--visible {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .payment-content .payment-eyebrow,
+  .payment-content__title,
+  .payment-method,
+  .payment-description,
+  .inco-content .payment-eyebrow,
+  .inco-title,
+  .inco-item {
+    transform: translate3d(0, 75px, 0);
+  }
+
+  .payment-content.payment-animate--visible .payment-eyebrow,
+  .payment-content.payment-animate--visible .payment-content__title,
+  .payment-content.payment-animate--visible .payment-method,
+  .payment-content.payment-animate--visible .payment-description,
+  .inco-content.payment-animate--visible .payment-eyebrow,
+  .inco-content.payment-animate--visible .inco-title,
+  .inco-content.payment-animate--visible .inco-item {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .payment-experience__badge {
+    transform: translate3d(0, 55px, 0);
+  }
+
+  .payment-experience.payment-animate--visible
+  .payment-experience__badge {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .payment-experience,
+  .payment-content,
+  .payment-experience__badge,
+  .payment-content .payment-eyebrow,
+  .payment-content__title,
+  .payment-method,
+  .payment-description,
+  .inco-image,
+  .inco-content,
+  .inco-content .payment-eyebrow,
+  .inco-title,
+  .inco-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+/* Reduce excess space above INCO Terms */
+.inco-section {
+  padding-top: 55px;
+}
+
+@media (max-width: 767px) {
+  .inco-section {
+    padding-top: 45px;
+  }
+}
+
