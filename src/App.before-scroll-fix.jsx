@@ -1,5 +1,4 @@
-﻿import { useEffect } from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+﻿import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Header from './components/layout/Header.jsx';
 import Footer from './components/layout/Footer.jsx';
@@ -13,27 +12,9 @@ import PaymentTerms from './components/pages/PaymentTerms.jsx';
 import FAQ from './components/pages/FAQ.jsx';
 import ContactUs from './components/pages/ContactUs.jsx';
 
-function ScrollToTop() {
-  const { pathname, search, hash } = useLocation();
-
-  useEffect(() => {
-    if (hash) return;
-
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'auto',
-    });
-  }, [pathname, search, hash]);
-
-  return null;
-}
-
 function App() {
   return (
     <>
-      <ScrollToTop />
-
       <Header />
 
       <Routes>

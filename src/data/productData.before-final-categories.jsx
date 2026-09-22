@@ -1,7 +1,7 @@
 export const products = [
   {
     name: 'Onion',
-    category: 'Other Spices',
+    category: 'Spices',
     path: '/onion/',
     image: '/assets/images/Onion.png',
     hsn: '07031010',
@@ -20,7 +20,7 @@ export const products = [
 
   {
     name: 'Onion Powder',
-    category: 'Other Spices',
+    category: 'Powders',
     path: '/onion-powder/',
     image: '/assets/images/Dehydrated-Onion-Powder.png',
     description: 'Onion Powder is a versatile spice made from dehydrated onions, adding rich flavor to soups, sauces, marinades, and seasonings effortlessly.',
@@ -34,7 +34,7 @@ export const products = [
 
   {
     name: 'Red Chilli',
-    category: 'Red Chilli',
+    category: 'Spices',
     path: '/red-chilli/',
     image: '/assets/images/chilli.png',
     hsn: '09042110',
@@ -53,7 +53,7 @@ export const products = [
 
   {
     name: 'Red Chilli Powder',
-    category: 'Red Chilli',
+    category: 'Powders',
     path: '/red-chilli-powder/',
     image: '/assets/images/red-chilli-powder.png',
     description: 'Red Chilli Powder is a finely ground spice made from dried red chillies, prized for its vibrant color, pungent aroma, and spicy flavor.',
@@ -67,7 +67,7 @@ export const products = [
 
   {
     name: 'Turmeric',
-    category: 'Turmeric',
+    category: 'Spices',
     path: '/turmeric/',
     image: '/assets/images/turmeric.png',
     description: 'Turmeric is a natural spice known for its bright golden color, distinctive aroma, and earthy flavor. It is widely used in food preparation, spice processing, and traditional applications.',
@@ -84,7 +84,7 @@ export const products = [
 
   {
     name: 'Turmeric Powder',
-    category: 'Turmeric',
+    category: 'Powders',
     path: '/turmeric-powder/',
     image: '/assets/images/turmericPowder.png',
     description: 'Turmeric Powder is a finely ground spice prepared from dried turmeric, offering a vibrant golden color, characteristic aroma, and earthy flavor for food and spice applications.',
@@ -101,7 +101,7 @@ export const products = [
 
   {
     name: 'Turmeric Finger',
-    category: 'Turmeric',
+    category: 'Spices',
     path: '/turmeric-finger/',
     image: '/assets/images/TurmericFinger.png',
     description: 'Turmeric Finger refers to dried whole turmeric rhizomes with a natural golden-yellow color and characteristic aroma. It is commonly used for spice processing and food applications.',
@@ -168,7 +168,7 @@ export const products = [
 
   {
     name: 'Handicrafts',
-    category: 'Hand Craft',
+    category: 'Handcrafts',
     path: '/handicrafts/',
     image: '/assets/images/handicrafts.png',
     description: 'Handicrafts are carefully crafted products that combine traditional workmanship with practical and decorative designs. They are suitable for home decor, gifting, lifestyle and customized applications.',
@@ -185,5 +185,4 @@ export const products = [
 
 export const getProductByPath = (path) =>
   products.find((product) => product.path === path);
-
 

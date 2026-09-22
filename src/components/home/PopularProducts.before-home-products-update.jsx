@@ -4,24 +4,19 @@ import './PopularProducts.css';
 
 const products = [
   {
-    name: 'Turmeric',
-    image: '/assets/images/turmeric.png',
-    path: '/turmeric/'
+    name: 'Onion',
+    image: '/assets/images/Onion.png',
+    path: '/onion/'
   },
   {
-    name: 'Red Chilli',
-    image: '/assets/images/chilli.png',
-    path: '/red-chilli/'
+    name: 'Onion Powder',
+    image: '/assets/images/Dehydrated-Onion-Powder.png',
+    path: '/onion-powder/'
   },
   {
     name: 'Coconut',
     image: '/assets/images/coconut.png',
     path: '/coconut/'
-  },
-  {
-    name: 'Handicrafts',
-    image: '/assets/images/handicrafts.png',
-    path: '/handicrafts/'
   },
 ];
 
@@ -61,6 +56,7 @@ function PopularProducts() {
 
         <div className="popular-products__heading">
           <div className="popular-products__eyebrow">
+            <span>?</span>
             Popular Products
           </div>
 
@@ -111,7 +107,7 @@ function PopularProducts() {
                           to={product.path}
                           className="popular-products__button"
                         >
-                          View Product <span>→</span>
+                          View Product <span>?</span>
                         </Link>
                       </div>
                     </div>
@@ -123,29 +119,12 @@ function PopularProducts() {
 
         </div>
 
-        <div className="popular-products__explore">
-          <Link
-            to="/our-products/"
-            className="popular-products__explore-button"
-          >
-            Explore All Products <span>&rarr;</span>
-          </Link>
-        </div>
-
       </div>
     </section>
   );
 }
 
 export default PopularProducts;
-
-
-
-
-
-
-
-
 
 
 

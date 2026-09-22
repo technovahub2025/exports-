@@ -123,25 +123,12 @@ function PopularProducts() {
 
         </div>
 
-        <div className="popular-products__explore">
-          <Link
-            to="/our-products/"
-            className="popular-products__explore-button"
-          >
-            Explore All Products <span>&rarr;</span>
-          </Link>
-        </div>
-
       </div>
     </section>
   );
 }
 
 export default PopularProducts;
-
-
-
-
 
 
 

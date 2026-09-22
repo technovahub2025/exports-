@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGlobe, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { products } from '../../data/productData.js';
@@ -28,15 +28,6 @@ const categorySections = [
 ];
 
 function OurProducts() {
-  const [activeCategory, setActiveCategory] = useState('All Products');
-
-  const filteredCategorySections =
-    activeCategory === 'All Products'
-      ? categorySections
-      : categorySections.filter(
-          (category) => category.name === activeCategory
-        );
-
   useEffect(() => {
     const cards = document.querySelectorAll('.our-product-card');
 
@@ -57,7 +48,7 @@ function OurProducts() {
     cards.forEach((card) => observer.observe(card));
 
     return () => observer.disconnect();
-  }, [activeCategory]);
+  }, []);
 
   return (
     <main className="our-products-page">
@@ -103,33 +94,9 @@ function OurProducts() {
         </div>
       </section>
 
-      <div className="our-products-filters">
-        {[
-          'All Products',
-          'Turmeric',
-          'Red Chilli',
-          'Coconut',
-          'Hand Craft',
-          'Other Spices',
-        ].map((category) => (
-          <button
-            key={category}
-            type="button"
-            className={`our-products-filter ${
-              activeCategory === category
-                ? 'our-products-filter--active'
-                : ''
-            }`}
-            onClick={() => setActiveCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
       <section className="our-products-grid-section">
 
-        {filteredCategorySections.map((category) => (
+        {categorySections.map((category) => (
           <div
             className="our-products-category-section"
             key={category.name}
@@ -199,7 +166,3 @@ function OurProducts() {
 }
 
 export default OurProducts;
-
-
-
-

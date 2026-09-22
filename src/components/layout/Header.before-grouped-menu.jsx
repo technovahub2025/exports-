@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
@@ -107,32 +107,19 @@ function Header() {
               }
             >
               Our Products
-              <span className="zaza-nav__arrow">&darr;</span>
+              <span className="zaza-nav__arrow">?</span>
             </NavLink>
 
             <div className="zaza-dropdown">
 
-              {productGroups.map((group) => (
-                <div
-                  key={group.name}
-                  className="zaza-dropdown__nested"
+              {productItems.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className="zaza-dropdown__item"
                 >
-                  <div className="zaza-dropdown__item zaza-dropdown__parent">
-                    {group.name}
-                  </div>
-
-                  <div className="zaza-dropdown--nested">
-                    {group.items.map((item) => (
-                      <NavLink
-                        key={item.path}
-                        to={item.path}
-                        className="zaza-dropdown__item"
-                      >
-                        {item.name}
-                      </NavLink>
-                    ))}
-                  </div>
-                </div>
+                  {item.name}
+                </NavLink>
               ))}
 
             </div>
@@ -200,7 +187,7 @@ function Header() {
             onClick={closeMobile}
             aria-label="Close menu"
           >
-            ×
+            �
           </button>
 
         </div>
@@ -239,34 +226,23 @@ function Header() {
               className="zaza-mobile-link__arrow"
               aria-label="Toggle products menu"
             >
-              {productsOpen ? String.fromCharCode(8593) : String.fromCharCode(8595)}
+              {productsOpen ? '?' : '?'}
             </button>
           </div>
 
           {productsOpen && (
             <div className="zaza-mobile-submenu">
 
-              {productGroups.map((group) => (
-                <div
-                  key={group.name}
-                  className="zaza-mobile-nested"
-                >
-                  <div className="zaza-mobile-sublink">
-                    {group.name}
-                  </div>
-
-                  {group.items.map((item) => (
-                    <NavLink
-                      key={item.path}
-                      to={item.path}
-                      onClick={closeMobile}
-                      className="zaza-mobile-sublink"
-                    >
-                      {item.name}
-                    </NavLink>
-                  ))}
-                </div>
-              ))}
+              {productItems.map((item) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    onClick={closeMobile}
+                    className="zaza-mobile-sublink"
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
 
 
             </div>
@@ -319,10 +295,6 @@ function Header() {
 }
 
 export default Header;
-
-
-
-
 
 
 

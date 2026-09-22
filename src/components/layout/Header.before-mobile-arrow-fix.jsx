@@ -239,7 +239,7 @@ function Header() {
               className="zaza-mobile-link__arrow"
               aria-label="Toggle products menu"
             >
-              {productsOpen ? String.fromCharCode(8593) : String.fromCharCode(8595)}
+              {productsOpen ? '?' : '?'}
             </button>
           </div>
 
@@ -319,7 +319,6 @@ function Header() {
 }
 
 export default Header;
-
 
 
 

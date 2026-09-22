@@ -14,20 +14,12 @@
     link: '/onion-powder/',
   },
   {
-    name: 'Dehydrated Onion',
-    image: '/assets/images/Dehydrated-Minced-Onion.jpg',
+    name: 'Coconut',
+    image: '/assets/images/coconut.png',
     description:
-      'Dehydrated onion is a convenient, long-lasting, and versatile ingredient used in kitchens and industries worldwide.It retains the strong flavor.',
-    link: '/dehydrated-onion/',
+      'Coconut is a versatile tropical product widely used in food, beverage, oil, personal care, and various industrial applications.',
+    link: '/coconut/',
   },
-
-
-  {
 ];
 
 export default popularProducts;
-
-
-
-
-

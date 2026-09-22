@@ -128,7 +128,7 @@ function PopularProducts() {
             to="/our-products/"
             className="popular-products__explore-button"
           >
-            Explore All Products <span>&rarr;</span>
+            Explore All Products <span>?</span>
           </Link>
         </div>
 
@@ -138,9 +138,6 @@ function PopularProducts() {
 }
 
 export default PopularProducts;
-
-
-
 
 
 

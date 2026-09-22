@@ -6,15 +6,10 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/
 const products = [
   ['Onion', '/onion/'],
   ['Onion Powder', '/onion-powder/'],
-  ['Red Chilli', '/red-chilli/'],
-  ['Red Chilli Powder', '/red-chilli-powder/'],
-  ['Turmeric', '/turmeric/'],
-  ['Turmeric Powder', '/turmeric-powder/'],
-  ['Turmeric Finger', '/turmeric-finger/'],
-  ['Coconut', '/coconut/'],
-  ['Coco Coir', '/coco-coir/'],
-  ['Coco Peat Blocks', '/coco-peat-blocks/'],
-  ['Handicrafts', '/handicrafts/'],
+  ['Dehydrated Onion', '/dehydrated-onion/'],
+  ['Garlic', '/garlic/'],
+  ['Garlic Powder', '/garlic-powder/'],
+  ['Dehydrated Garlic', '/dehydrated-garlic/'],
 ];
 
 function Footer() {
@@ -144,15 +139,8 @@ function Footer() {
           </p>
 
           <p>
-  Designed by{" "}
-  <a
-    href="https://technovahub.in/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    TechnovaHub
-  </a>
-</p>
+            Designed by Lavish Technologies
+          </p>
         </div>
       </div>
 
@@ -161,7 +149,6 @@ function Footer() {
 }
 
 export default Footer;
-
 
 
 

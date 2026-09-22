@@ -2,43 +2,18 @@
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
-const productGroups = [
-  {
-    name: 'Turmeric',
-    items: [
-      { name: 'Turmeric', path: '/turmeric/' },
-      { name: 'Turmeric Powder', path: '/turmeric-powder/' },
-      { name: 'Turmeric Finger', path: '/turmeric-finger/' }
-    ]
-  },
-  {
-    name: 'Red Chilli',
-    items: [
-      { name: 'Red Chilli', path: '/red-chilli/' },
-      { name: 'Red Chilli Powder', path: '/red-chilli-powder/' }
-    ]
-  },
-  {
-    name: 'Coconut',
-    items: [
-      { name: 'Coconut', path: '/coconut/' },
-      { name: 'Coco Coir', path: '/coco-coir/' },
-      { name: 'Coco Peat Blocks', path: '/coco-peat-blocks/' }
-    ]
-  },
-  {
-    name: 'Hand Craft',
-    items: [
-      { name: 'Handicrafts', path: '/handicrafts/' }
-    ]
-  },
-  {
-    name: 'Other Spices',
-    items: [
-      { name: 'Onion', path: '/onion/' },
-      { name: 'Onion Powder', path: '/onion-powder/' }
-    ]
-  }
+const productItems = [
+  { name: 'Onion', path: '/onion/' },
+  { name: 'Onion Powder', path: '/onion-powder/' },
+  { name: 'Red Chilli', path: '/red-chilli/' },
+  { name: 'Red Chilli Powder', path: '/red-chilli-powder/' },
+  { name: 'Turmeric', path: '/turmeric/' },
+  { name: 'Turmeric Powder', path: '/turmeric-powder/' },
+  { name: 'Turmeric Finger', path: '/turmeric-finger/' },
+  { name: 'Coconut', path: '/coconut/' },
+  { name: 'Coco Coir', path: '/coco-coir/' },
+  { name: 'Coco Peat Blocks', path: '/coco-peat-blocks/' },
+  { name: 'Handicrafts', path: '/handicrafts/' }
 ];
 
 function Header() {
@@ -107,32 +82,19 @@ function Header() {
               }
             >
               Our Products
-              <span className="zaza-nav__arrow">&darr;</span>
+              <span className="zaza-nav__arrow">▼</span>
             </NavLink>
 
             <div className="zaza-dropdown">
 
-              {productGroups.map((group) => (
-                <div
-                  key={group.name}
-                  className="zaza-dropdown__nested"
+              {productItems.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className="zaza-dropdown__item"
                 >
-                  <div className="zaza-dropdown__item zaza-dropdown__parent">
-                    {group.name}
-                  </div>
-
-                  <div className="zaza-dropdown--nested">
-                    {group.items.map((item) => (
-                      <NavLink
-                        key={item.path}
-                        to={item.path}
-                        className="zaza-dropdown__item"
-                      >
-                        {item.name}
-                      </NavLink>
-                    ))}
-                  </div>
-                </div>
+                  {item.name}
+                </NavLink>
               ))}
 
             </div>
@@ -239,34 +201,25 @@ function Header() {
               className="zaza-mobile-link__arrow"
               aria-label="Toggle products menu"
             >
-              {productsOpen ? String.fromCharCode(8593) : String.fromCharCode(8595)}
+              {productsOpen ? '▲' : '▼'}
             </button>
           </div>
 
           {productsOpen && (
             <div className="zaza-mobile-submenu">
 
-              {productGroups.map((group) => (
-                <div
-                  key={group.name}
-                  className="zaza-mobile-nested"
-                >
-                  <div className="zaza-mobile-sublink">
-                    {group.name}
-                  </div>
-
-                  {group.items.map((item) => (
-                    <NavLink
-                      key={item.path}
-                      to={item.path}
-                      onClick={closeMobile}
-                      className="zaza-mobile-sublink"
-                    >
-                      {item.name}
-                    </NavLink>
-                  ))}
-                </div>
-              ))}
+              {productItems
+                .filter((item) => item.name !== 'Handicrafts')
+                .map((item) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    onClick={closeMobile}
+                    className="zaza-mobile-sublink"
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
 
 
             </div>
@@ -319,12 +272,6 @@ function Header() {
 }
 
 export default Header;
-
-
-
-
-
-
 
 
 

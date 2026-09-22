@@ -7,7 +7,6 @@ import InternationalStandards from './InternationalStandards.jsx';
 import WhyChooseUs from './WhyChooseUs.jsx';
 import ServicesCTA from './ServicesCTA.jsx';
 import Testimonials from './Testimonials.jsx';
-import Gallery from './Gallery.jsx';
 
 function Home() {
   useEffect(() => {
@@ -31,13 +30,11 @@ function Home() {
       <WhyChooseUs />
       <ServicesCTA />
       <Testimonials />
-      <Gallery />
     </main>
   );
 }
 
 export default Home;
-
 
 
 
