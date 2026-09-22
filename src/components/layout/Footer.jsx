@@ -139,8 +139,15 @@ function Footer() {
           </p>
 
           <p>
-            Designed by Lavish Technologies
-          </p>
+  Designed by{" "}
+  <a
+    href="https://technovahub.in/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    TechnovaHub
+  </a>
+</p>
         </div>
       </div>
 
