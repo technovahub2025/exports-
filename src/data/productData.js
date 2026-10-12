@@ -1,7 +1,7 @@
-export const products = [
+﻿export const products = [
   {
     name: 'Onion',
-    category: 'Other Spices',
+    category: 'Spices',
     path: '/onion/',
     image: '/assets/images/Onion.png',
     hsn: '07031010',
@@ -20,7 +20,7 @@ export const products = [
 
   {
     name: 'Onion Powder',
-    category: 'Other Spices',
+    category: 'Powders',
     path: '/onion-powder/',
     image: '/assets/images/Dehydrated-Onion-Powder.png',
     description: 'Onion Powder is a versatile spice made from dehydrated onions, adding rich flavor to soups, sauces, marinades, and seasonings effortlessly.',
@@ -34,7 +34,7 @@ export const products = [
 
   {
     name: 'Red Chilli',
-    category: 'Red Chilli',
+    category: 'Spices',
     path: '/red-chilli/',
     image: '/assets/images/chilli.png',
     hsn: '09042110',
@@ -53,7 +53,7 @@ export const products = [
 
   {
     name: 'Red Chilli Powder',
-    category: 'Red Chilli',
+    category: 'Powders',
     path: '/red-chilli-powder/',
     image: '/assets/images/red-chilli-powder.png',
     description: 'Red Chilli Powder is a finely ground spice made from dried red chillies, prized for its vibrant color, pungent aroma, and spicy flavor.',
@@ -67,7 +67,7 @@ export const products = [
 
   {
     name: 'Turmeric',
-    category: 'Turmeric',
+    category: 'Spices',
     path: '/turmeric/',
     image: '/assets/images/turmeric.png',
     description: 'Turmeric is a natural spice known for its bright golden color, distinctive aroma, and earthy flavor. It is widely used in food preparation, spice processing, and traditional applications.',
@@ -84,7 +84,7 @@ export const products = [
 
   {
     name: 'Turmeric Powder',
-    category: 'Turmeric',
+    category: 'Powders',
     path: '/turmeric-powder/',
     image: '/assets/images/turmericPowder.png',
     description: 'Turmeric Powder is a finely ground spice prepared from dried turmeric, offering a vibrant golden color, characteristic aroma, and earthy flavor for food and spice applications.',
@@ -101,7 +101,7 @@ export const products = [
 
   {
     name: 'Turmeric Finger',
-    category: 'Turmeric',
+    category: 'Spices',
     path: '/turmeric-finger/',
     image: '/assets/images/TurmericFinger.png',
     description: 'Turmeric Finger refers to dried whole turmeric rhizomes with a natural golden-yellow color and characteristic aroma. It is commonly used for spice processing and food applications.',
@@ -168,7 +168,7 @@ export const products = [
 
   {
     name: 'Handicrafts',
-    category: 'Hand Craft',
+    category: 'Handicrafts',
     path: '/handicrafts/',
     image: '/assets/images/handicrafts.png',
     description: 'Handicrafts are carefully crafted products that combine traditional workmanship with practical and decorative designs. They are suitable for home decor, gifting, lifestyle and customized applications.',
@@ -181,9 +181,218 @@ export const products = [
       ['Packaging', 'Available according to buyer requirements']
     ]
   }
+,
+  {
+    name: 'Multicolour Decorative Wall Hanging',
+    category: 'Handicrafts',
+    path: '/handicraft-01/',
+    image: '/assets/images/handicrafts-new/handicraft-01.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 01'],
+      ['Image Reference', 'handicraft-01.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Handmade Circular Wall Hanging Set',
+    category: 'Handicrafts',
+    path: '/handicraft-02/',
+    image: '/assets/images/handicrafts-new/handicraft-02.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 02'],
+      ['Image Reference', 'handicraft-02.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Traditional Hanging Wall Decor',
+    category: 'Handicrafts',
+    path: '/handicraft-03/',
+    image: '/assets/images/handicrafts-new/handicraft-03.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 03'],
+      ['Image Reference', 'handicraft-03.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Hand-Carved Wooden Peacock Sculpture',
+    category: 'Handicrafts',
+    path: '/handicraft-04/',
+    image: '/assets/images/handicrafts-new/handicraft-04.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 04'],
+      ['Image Reference', 'handicraft-04.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Blue Crochet Tote Bag',
+    category: 'Handicrafts',
+    path: '/handicraft-05/',
+    image: '/assets/images/handicrafts-new/handicraft-05.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 05'],
+      ['Image Reference', 'handicraft-05.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Handcrafted Wooden Kitchen Utensil Set',
+    category: 'Handicrafts',
+    path: '/handicraft-06/',
+    image: '/assets/images/handicrafts-new/handicraft-06.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 06'],
+      ['Image Reference', 'handicraft-06.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Wooden Chopping Board and Utensil Set',
+    category: 'Handicrafts',
+    path: '/handicraft-07/',
+    image: '/assets/images/handicrafts-new/handicraft-07.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 07'],
+      ['Image Reference', 'handicraft-07.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Rustic Candle and Table Decor Set',
+    category: 'Handicrafts',
+    path: '/handicraft-08/',
+    image: '/assets/images/handicrafts-new/handicraft-08.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 08'],
+      ['Image Reference', 'handicraft-08.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Decorative Mosaic Candle Holders',
+    category: 'Handicrafts',
+    path: '/handicraft-09/',
+    image: '/assets/images/handicrafts-new/handicraft-09.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 09'],
+      ['Image Reference', 'handicraft-09.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Rustic Candle Decor Set',
+    category: 'Handicrafts',
+    path: '/handicraft-10/',
+    image: '/assets/images/handicrafts-new/handicraft-10.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 10'],
+      ['Image Reference', 'handicraft-10.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Textured Sphere Candle Set',
+    category: 'Handicrafts',
+    path: '/handicraft-11/',
+    image: '/assets/images/handicrafts-new/handicraft-11.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 11'],
+      ['Image Reference', 'handicraft-11.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Handwoven Storage Basket with Handle',
+    category: 'Handicrafts',
+    path: '/handicraft-12/',
+    image: '/assets/images/handicrafts-new/handicraft-12.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 12'],
+      ['Image Reference', 'handicraft-12.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Decorative Candle Collection',
+    category: 'Handicrafts',
+    path: '/handicraft-13/',
+    image: '/assets/images/handicrafts-new/handicraft-13.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 13'],
+      ['Image Reference', 'handicraft-13.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Natural Woven Tote Bag',
+    category: 'Handicrafts',
+    path: '/handicraft-14/',
+    image: '/assets/images/handicrafts-new/handicraft-14.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 14'],
+      ['Image Reference', 'handicraft-14.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Cream Crochet Handbag',
+    category: 'Handicrafts',
+    path: '/handicraft-15/',
+    image: '/assets/images/handicrafts-new/handicraft-15.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 15'],
+      ['Image Reference', 'handicraft-15.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  },
+
+  {
+    name: 'Floral Embroidered Jute Tote Bag',
+    category: 'Handicrafts',
+    path: '/handicraft-16/',
+    image: '/assets/images/handicrafts-new/handicraft-16.jpeg',
+    description: 'Explore this handicraft product from our collection. Contact us for product details, availability, bulk orders, and customization options.',
+    specifications: [
+      ['Product', 'Handicraft 16'],
+      ['Image Reference', 'handicraft-16.jpeg'],
+      ['Packaging', 'As per buyer requirements']
+    ]
+  }
 ];
 
 export const getProductByPath = (path) =>
   products.find((product) => product.path === path);
+
 
 

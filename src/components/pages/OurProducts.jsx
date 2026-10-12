@@ -5,26 +5,10 @@ import { products } from '../../data/productData.js';
 import './OurProducts.css';
 
 const categorySections = [
-  {
-    name: 'Turmeric',
-    products: products.filter((product) => product.category === 'Turmeric'),
-  },
-  {
-    name: 'Red Chilli',
-    products: products.filter((product) => product.category === 'Red Chilli'),
-  },
-  {
-    name: 'Coconut',
-    products: products.filter((product) => product.category === 'Coconut'),
-  },
-  {
-    name: 'Hand Craft',
-    products: products.filter((product) => product.category === 'Hand Craft'),
-  },
-  {
-    name: 'Other Spices',
-    products: products.filter((product) => product.category === 'Other Spices'),
-  },
+  { name: 'Spices', products: products.filter((product) => product.category === 'Spices') },
+  { name: 'Powders', products: products.filter((product) => product.category === 'Powders') },
+  { name: 'Coconut', products: products.filter((product) => product.category === 'Coconut') },
+  { name: 'Handicrafts', products: products.filter((product) => product.category === 'Handicrafts') }
 ];
 
 function OurProducts() {
@@ -103,14 +87,41 @@ function OurProducts() {
         </div>
       </section>
 
+      <section className="product-range-overview">
+        <div className="product-range-overview__heading">
+          <p>EXPLORE OUR RANGE</p>
+          <h2>Browse Product Categories</h2>
+        </div>
+
+        <div className="product-range-overview__grid">
+          {[
+            { name: 'Turmeric', path: '/products/turmeric/' },
+            { name: 'Chilli', path: '/products/chilli/' },
+            { name: 'Pure Spices', path: '/products/pure-spices/' },
+            { name: 'Blended Spices', path: '/products/blended-spices/' },
+            { name: 'Seasonings', path: '/products/seasonings/' },
+            { name: 'Marination Mixes', path: '/products/marination-mixes/' },
+            { name: 'Culinary Paste', path: '/products/culinary-paste/' },
+            { name: 'Chutney Powder', path: '/products/chutney-powder/' }
+          ].map((category) => (
+            <Link
+              key={category.path}
+              to={category.path}
+              className="product-range-overview__card"
+            >
+              <span>{category.name}</span>
+              <span aria-hidden="true">↗</span>
+            </Link>
+          ))}
+        </div>
+      </section>
       <div className="our-products-filters">
         {[
           'All Products',
-          'Turmeric',
-          'Red Chilli',
+          'Spices',
+          'Powders',
           'Coconut',
-          'Hand Craft',
-          'Other Spices',
+          'Handicrafts'
         ].map((category) => (
           <button
             key={category}
@@ -199,6 +210,7 @@ function OurProducts() {
 }
 
 export default OurProducts;
+
 
 
 

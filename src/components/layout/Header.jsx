@@ -1,44 +1,22 @@
-﻿import { useState } from 'react';
+﻿
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 
-const productGroups = [
-  {
-    name: 'Turmeric',
-    items: [
-      { name: 'Turmeric', path: '/turmeric/' },
-      { name: 'Turmeric Powder', path: '/turmeric-powder/' },
-      { name: 'Turmeric Finger', path: '/turmeric-finger/' }
-    ]
-  },
-  {
-    name: 'Red Chilli',
-    items: [
-      { name: 'Red Chilli', path: '/red-chilli/' },
-      { name: 'Red Chilli Powder', path: '/red-chilli-powder/' }
-    ]
-  },
-  {
-    name: 'Coconut',
-    items: [
-      { name: 'Coconut', path: '/coconut/' },
-      { name: 'Coco Coir', path: '/coco-coir/' },
-      { name: 'Coco Peat Blocks', path: '/coco-peat-blocks/' }
-    ]
-  },
-  {
-    name: 'Hand Craft',
-    items: [
-      { name: 'Handicrafts', path: '/handicrafts/' }
-    ]
-  },
-  {
-    name: 'Other Spices',
-    items: [
-      { name: 'Onion', path: '/onion/' },
-      { name: 'Onion Powder', path: '/onion-powder/' }
-    ]
-  }
+const spiceCategories = [
+  { name: 'Turmeric', path: '/products/turmeric/' },
+  { name: 'Chilli', path: '/products/chilli/' },
+  { name: 'Pure Spices', path: '/products/pure-spices/' },
+  { name: 'Blended Spices', path: '/products/blended-spices/' },
+  { name: 'Seasonings', path: '/products/seasonings/' },
+  { name: 'Marination Mixes', path: '/products/marination-mixes/' },
+  { name: 'Culinary Paste', path: '/products/culinary-paste/' },
+  { name: 'Chutney Powder', path: '/products/chutney-powder/' }
+];
+
+const otherCategories = [
+  { name: 'Coconut', path: '/coconut/' },
+  { name: 'Handicrafts', path: '/handicrafts/' }
 ];
 
 function Header() {
@@ -51,34 +29,45 @@ function Header() {
   };
 
   const goToAboutCompany = () => {
-  if (window.location.pathname === '/') {
-    document.getElementById('about-company')?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-    return;
-  }
+    closeMobile();
 
-  window.location.href = '/#about-company';
-};
+    if (window.location.pathname === '/') {
+      document.getElementById('about-company')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      return;
+    }
+
+    window.location.href = '/#about-company';
+  };
+
+  const renderCategoryLinks = (categories, mobile = false) =>
+    categories.map((category) => (
+      <NavLink
+        key={category.path}
+        to={category.path}
+        onClick={mobile ? closeMobile : undefined}
+        className={mobile ? 'zaza-mobile-sublink' : 'zaza-dropdown__item'}
+      >
+        {category.name}
+      </NavLink>
+    ));
 
   return (
     <header className="zaza-header">
       <div className="zaza-header__container">
-
-        {/* Logo */}
         <div className="zaza-header__logo">
           <Link to="/" onClick={closeMobile}>
             <img
               src="/assets/images/Zaza-Exports-Logo.png"
-              alt="XYZ Exports"
+              alt="Zaza Exports"
             />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="zaza-header__nav">
-
           <NavLink
             to="/"
             end
@@ -97,9 +86,7 @@ function Header() {
             About Us
           </button>
 
-          {/* Products */}
           <div className="zaza-nav__products">
-
             <NavLink
               to="/our-products/"
               className={({ isActive }) =>
@@ -111,32 +98,14 @@ function Header() {
             </NavLink>
 
             <div className="zaza-dropdown">
+              {renderCategoryLinks(spiceCategories)}
 
-              {productGroups.map((group) => (
-                <div
-                  key={group.name}
-                  className="zaza-dropdown__nested"
-                >
-                  <div className="zaza-dropdown__item zaza-dropdown__parent">
-                    {group.name}
-                  </div>
+              <div className="zaza-dropdown__divider" />
 
-                  <div className="zaza-dropdown--nested">
-                    {group.items.map((item) => (
-                      <NavLink
-                        key={item.path}
-                        to={item.path}
-                        className="zaza-dropdown__item"
-                      >
-                        {item.name}
-                      </NavLink>
-                    ))}
-                  </div>
-                </div>
-              ))}
-
+              {renderCategoryLinks(otherCategories)}
             </div>
           </div>
+
           <NavLink to="/certificates/" className="zaza-nav__link">
             Certificates
           </NavLink>
@@ -152,15 +121,10 @@ function Header() {
           <NavLink to="/contact-us/" className="zaza-nav__link">
             Contact Us
           </NavLink>
-
         </nav>
 
-        {/* Catalogue */}
         <div className="zaza-header__cta">
-          <Link
-            to="/e-catalogue/"
-            className="zaza-header__catalogue"
-          >
+          <Link to="/e-catalogue/" className="zaza-header__catalogue">
             E-Catalogue
             <span>&#8599;</span>
           </Link>
@@ -175,7 +139,6 @@ function Header() {
         >
           &#9776;
         </button>
-
       </div>
 
       {/* Mobile menu */}
@@ -184,13 +147,11 @@ function Header() {
           mobileOpen ? 'zaza-mobile-menu--open' : ''
         }`}
       >
-
         <div className="zaza-mobile-menu__header">
-
           <Link to="/" onClick={closeMobile}>
             <img
               src="/assets/images/Zaza-Exports-Logo.png"
-              alt="XYZ Exports"
+              alt="Zaza Exports"
             />
           </Link>
 
@@ -202,11 +163,9 @@ function Header() {
           >
             ×
           </button>
-
         </div>
 
         <nav className="zaza-mobile-menu__nav">
-
           <NavLink
             to="/"
             end
@@ -238,37 +197,21 @@ function Header() {
               onClick={() => setProductsOpen(!productsOpen)}
               className="zaza-mobile-link__arrow"
               aria-label="Toggle products menu"
+              aria-expanded={productsOpen}
             >
-              {productsOpen ? String.fromCharCode(8593) : String.fromCharCode(8595)}
+              {productsOpen
+                ? String.fromCharCode(8593)
+                : String.fromCharCode(8595)}
             </button>
           </div>
 
           {productsOpen && (
             <div className="zaza-mobile-submenu">
+              {renderCategoryLinks(spiceCategories, true)}
 
-              {productGroups.map((group) => (
-                <div
-                  key={group.name}
-                  className="zaza-mobile-nested"
-                >
-                  <div className="zaza-mobile-sublink">
-                    {group.name}
-                  </div>
+              <div className="zaza-dropdown__divider" />
 
-                  {group.items.map((item) => (
-                    <NavLink
-                      key={item.path}
-                      to={item.path}
-                      onClick={closeMobile}
-                      className="zaza-mobile-sublink"
-                    >
-                      {item.name}
-                    </NavLink>
-                  ))}
-                </div>
-              ))}
-
-
+              {renderCategoryLinks(otherCategories, true)}
             </div>
           )}
 
@@ -311,7 +254,6 @@ function Header() {
           >
             E-Catalogue
           </NavLink>
-
         </nav>
       </div>
     </header>
@@ -319,27 +261,3 @@ function Header() {
 }
 
 export default Header;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
