@@ -6,22 +6,28 @@ const normalizeSlashes = (path) => path.replace(/\/{2,}/g, '/');
 export const withBasePath = (path = '/', { includeBase = true } = {}) => {
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
 
-  // If the path already includes the base, don't add it again.
-  if (
-    normalizedPath === BASE_PATH ||
-    normalizedPath.startsWith(`${BASE_PATH}/`)
-  ) {
-    return normalizeSlashes(normalizedPath);
-  }
-
   if (!includeBase) {
     return normalizeSlashes(normalizedPath);
   }
 
-  return normalizeSlashes(`${BASE_PATH}/${normalizedPath}`);
+  const basePath = BASE_PATH === '/' ? '' : BASE_PATH;
+
+  // Avoid adding the base path twice.
+  if (
+    basePath &&
+    (normalizedPath === basePath ||
+      normalizedPath.startsWith(`${basePath}/`))
+  ) {
+    return normalizeSlashes(normalizedPath);
+  }
+
+  return normalizeSlashes(`${basePath}/${normalizedPath}`);
 };
 
-export const routerPath = (path = '/') => withBasePath(path);
+// For paths used inside React Router, don't add BASE_PATH.
+// BrowserRouter basename handles it automatically.
+export const routerPath = (path = '/') =>
+  withBasePath(path, { includeBase: false });
 
 export const stripBasePath = (path) => {
   if (path === BASE_PATH || path === `${BASE_PATH}/`) {
