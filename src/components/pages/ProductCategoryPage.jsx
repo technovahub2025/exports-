@@ -203,7 +203,7 @@ function ProductCategoryPage() {
 
       <div className="product-category-back">
         <Link to={withBasePath('/our-products/')}>
-          ? Back to all products
+          &larr; Back to all products
         </Link>
       </div>
     </main>

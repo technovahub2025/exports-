@@ -186,7 +186,7 @@ function ECatalogue() {
 
       <section className="ecatalogue__header">
         <div className="ecatalogue__eyebrow">
-          <span>?</span>
+          <span>&#9635;</span>
           E-CATALOGUE
         </div>
 

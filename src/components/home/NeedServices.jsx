@@ -26,7 +26,7 @@ function NeedServices() {
 
           <Link to={withBasePath('/contact-us/')} className="need-services__button">
             Contact us
-            <span>?</span>
+            <span>&#8599;</span>
           </Link>
         </div>
       </div>
