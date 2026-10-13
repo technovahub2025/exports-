@@ -1,4 +1,4 @@
-export const BASE_PATH = '/test_exports/';
+export const BASE_PATH = '/test_exports';
 
 export const withBasePath = (path) =>
   path === '/' ? `${BASE_PATH}/` : `${BASE_PATH}${path}`;
