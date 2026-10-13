@@ -5,11 +5,9 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 import './styles/global.css';
 
-const routerBasename = '/test_exports';
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename={routerBasename}>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>

@@ -17,6 +17,11 @@ const products = [
   ['Handicrafts', '/handicrafts/'],
 ];
 
+const BASE_PATH = '/test_exports';
+
+const withBasePath = (path) =>
+  path === '/' ? `${BASE_PATH}/` : `${BASE_PATH}${path}`;
+
 function Footer() {
   useEffect(() => {
     const footerItems = document.querySelectorAll(
@@ -85,7 +90,7 @@ function Footer() {
             <ul>
               {products.map(([name, path]) => (
                 <li key={path}>
-                  <Link to={path}>{name}</Link>
+                  <Link to={withBasePath(path)}>{name}</Link>
                 </li>
               ))}
             </ul>
@@ -100,13 +105,13 @@ function Footer() {
             <h3>Quick Links</h3>
 
             <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about-us/">About Us</Link></li>
-              <li><Link to="/our-products/">Our Products</Link></li>
-              <li><Link to="/certificates/">Certificates</Link></li>
-              <li><Link to="/payment-terms/">Payment Terms</Link></li>
-              <li><Link to="/faq/">FAQ</Link></li>
-              <li><Link to="/contact-us/">Contact Us</Link></li>
+              <li><Link to={withBasePath('/')}>Home</Link></li>
+              <li><Link to={`${BASE_PATH}/#about-company`}>About Us</Link></li>
+              <li><Link to={withBasePath('/our-products/')}>Our Products</Link></li>
+              <li><Link to={withBasePath('/certificates/')}>Certificates</Link></li>
+              <li><Link to={withBasePath('/payment-terms/')}>Payment Terms</Link></li>
+              <li><Link to={withBasePath('/faq/')}>FAQ</Link></li>
+              <li><Link to={withBasePath('/contact-us/')}>Contact Us</Link></li>
             </ul>
           </div>
 

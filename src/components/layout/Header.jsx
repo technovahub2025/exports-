@@ -19,6 +19,11 @@ const otherCategories = [
   { name: 'Handicrafts', path: '/handicrafts/' }
 ];
 
+const BASE_PATH = '/test_exports';
+
+const withBasePath = (path) =>
+  path === '/' ? `${BASE_PATH}/` : `${BASE_PATH}${path}`;
+
 function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
@@ -31,11 +36,9 @@ function Header() {
   const goToAboutCompany = () => {
     closeMobile();
 
-    const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
-
     if (
-      window.location.pathname === `${basePath}/` ||
-      window.location.pathname === basePath
+      window.location.pathname === `${BASE_PATH}/` ||
+      window.location.pathname === BASE_PATH
     ) {
       document.getElementById('about-company')?.scrollIntoView({
         behavior: 'smooth',
@@ -44,14 +47,14 @@ function Header() {
       return;
     }
 
-    window.location.href = `${basePath}/#about-company`;
+    window.location.href = `${BASE_PATH}/#about-company`;
   };
 
   const renderCategoryLinks = (categories, mobile = false) =>
     categories.map((category) => (
       <NavLink
         key={category.path}
-        to={category.path}
+        to={withBasePath(category.path)}
         onClick={mobile ? closeMobile : undefined}
         className={mobile ? 'zaza-mobile-sublink' : 'zaza-dropdown__item'}
       >
@@ -63,7 +66,7 @@ function Header() {
     <header className="zaza-header">
       <div className="zaza-header__container">
         <div className="zaza-header__logo">
-          <Link to="/" onClick={closeMobile}>
+          <Link to={withBasePath('/')} onClick={closeMobile}>
             <img
               src="/assets/images/Zaza-Exports-Logo.png"
               alt="Zaza Exports"
@@ -74,7 +77,7 @@ function Header() {
         {/* Desktop Navigation */}
         <nav className="zaza-header__nav">
           <NavLink
-            to="/"
+            to={withBasePath('/')}
             end
             className={({ isActive }) =>
               `zaza-nav__link ${isActive ? 'active' : ''}`
@@ -93,7 +96,7 @@ function Header() {
 
           <div className="zaza-nav__products">
             <NavLink
-              to="/our-products/"
+              to={withBasePath('/our-products/')}
               className={({ isActive }) =>
                 `zaza-nav__link ${isActive ? 'active' : ''}`
               }
@@ -111,25 +114,25 @@ function Header() {
             </div>
           </div>
 
-          <NavLink to="/certificates/" className="zaza-nav__link">
+          <NavLink to={withBasePath('/certificates/')} className="zaza-nav__link">
             Certificates
           </NavLink>
 
-          <NavLink to="/payment-terms/" className="zaza-nav__link">
+          <NavLink to={withBasePath('/payment-terms/')} className="zaza-nav__link">
             Payment Terms
           </NavLink>
 
-          <NavLink to="/faq/" className="zaza-nav__link">
+          <NavLink to={withBasePath('/faq/')} className="zaza-nav__link">
             FAQ
           </NavLink>
 
-          <NavLink to="/contact-us/" className="zaza-nav__link">
+          <NavLink to={withBasePath('/contact-us/')} className="zaza-nav__link">
             Contact Us
           </NavLink>
         </nav>
 
         <div className="zaza-header__cta">
-          <Link to="/e-catalogue/" className="zaza-header__catalogue">
+          <Link to={withBasePath('/e-catalogue/')} className="zaza-header__catalogue">
             E-Catalogue
             <span>&#8599;</span>
           </Link>
@@ -153,7 +156,7 @@ function Header() {
         }`}
       >
         <div className="zaza-mobile-menu__header">
-          <Link to="/" onClick={closeMobile}>
+          <Link to={withBasePath('/')} onClick={closeMobile}>
             <img
               src="/assets/images/Zaza-Exports-Logo.png"
               alt="Zaza Exports"
@@ -172,7 +175,7 @@ function Header() {
 
         <nav className="zaza-mobile-menu__nav">
           <NavLink
-            to="/"
+            to={withBasePath('/')}
             end
             onClick={closeMobile}
             className="zaza-mobile-link"
@@ -190,7 +193,7 @@ function Header() {
 
           <div className="zaza-mobile-link zaza-mobile-link--button">
             <Link
-              to="/our-products/"
+              to={withBasePath('/our-products/')}
               onClick={closeMobile}
               className="zaza-mobile-link__text"
             >
@@ -221,7 +224,7 @@ function Header() {
           )}
 
           <NavLink
-            to="/certificates/"
+            to={withBasePath('/certificates/')}
             onClick={closeMobile}
             className="zaza-mobile-link"
           >
@@ -229,7 +232,7 @@ function Header() {
           </NavLink>
 
           <NavLink
-            to="/payment-terms/"
+            to={withBasePath('/payment-terms/')}
             onClick={closeMobile}
             className="zaza-mobile-link"
           >
@@ -237,7 +240,7 @@ function Header() {
           </NavLink>
 
           <NavLink
-            to="/faq/"
+            to={withBasePath('/faq/')}
             onClick={closeMobile}
             className="zaza-mobile-link"
           >
@@ -245,7 +248,7 @@ function Header() {
           </NavLink>
 
           <NavLink
-            to="/contact-us/"
+            to={withBasePath('/contact-us/')}
             onClick={closeMobile}
             className="zaza-mobile-link"
           >
@@ -253,7 +256,7 @@ function Header() {
           </NavLink>
 
           <NavLink
-            to="/e-catalogue/"
+            to={withBasePath('/e-catalogue/')}
             onClick={closeMobile}
             className="zaza-mobile-link"
           >
