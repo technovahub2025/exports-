@@ -77,25 +77,41 @@ function App() {
       <Header />
 
       <Routes>
+        {/* Enforce about-us redirect variants */}
+        <Route
+          path="/about-us"
+          element={<Navigate to="/#about-company" replace />}
+        />
         <Route
           path="/about-us/"
           element={<Navigate to="/#about-company" replace />}
+        />
+        <Route
+          path={`${BASE_PATH}/about-us`}
+          element={<Navigate to={`${BASE_PATH}/#about-company`} replace />}
         />
         <Route
           path={`${BASE_PATH}/about-us/`}
           element={<Navigate to={`${BASE_PATH}/#about-company`} replace />}
         />
 
-        {pageRoutes.flatMap(({ path, element }) => [
-          <Route key={path} path={path} element={element} />,
-          <Route
-            key={withBasePath(path)}
-            path={withBasePath(path)}
-            element={element}
-          />,
-        ])}
+        {/* Dynamic Route Generator supporting slash & no-slash fallback */}
+        {pageRoutes.flatMap(({ path, element }) => {
+          const cleanPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
+          
+          return [
+            // Standard Paths
+            <Route key={path} path={path} element={element} />,
+            <Route key={`${path}-no-slash`} path={cleanPath} element={element} />,
+            
+            // Base Path Variations
+            <Route key={withBasePath(path)} path={withBasePath(path)} element={element} />,
+            <Route key={`${withBasePath(path)}-no-slash`} path={withBasePath(cleanPath)} element={element} />
+          ];
+        })}
 
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* Safe Catch-All targeting base path */}
+        <Route path="*" element={<Navigate to={BASE_PATH || "/"} replace />} />
       </Routes>
 
       <Footer />
@@ -104,4 +120,3 @@ function App() {
 }
 
 export default App;
-
