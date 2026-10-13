@@ -111,7 +111,7 @@ function OurProducts() {
               className="product-range-overview__card"
             >
               <span>{category.name}</span>
-              <span aria-hidden="true">?</span>
+              <span aria-hidden="true">-&gt;</span>
             </Link>
           ))}
         </div>
