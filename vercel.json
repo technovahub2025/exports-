@@ -1,31 +1,7 @@
 ﻿{
   "rewrites": [
     {
-      "source": "/our-products",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/our-products/",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/our-products/:path*",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/e-catalogue",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/e-catalogue/",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/e-catalogue/:path*",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/:path*",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
