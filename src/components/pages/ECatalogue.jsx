@@ -1,7 +1,7 @@
-﻿import { useEffect } from 'react';
+import { useEffect } from 'react';
 import './ECatalogue.css';
 
-const PDF_URL = '/assets/catalogue/Zaza-Exports-E-Catalogue.pdf';
+const PDF_URL = `${import.meta.env.BASE_URL}assets/catalogue/Zaza-Exports-E-Catalogue.pdf`;
 
 function loadScript(src, dataAttribute) {
   return new Promise((resolve, reject) => {
@@ -186,7 +186,7 @@ function ECatalogue() {
 
       <section className="ecatalogue__header">
         <div className="ecatalogue__eyebrow">
-          <span>▤</span>
+          <span>?</span>
           E-CATALOGUE
         </div>
 
