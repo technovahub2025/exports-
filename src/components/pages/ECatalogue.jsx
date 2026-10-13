@@ -66,18 +66,18 @@ function ECatalogue() {
 
     async function initializeDFlip() {
       try {
-        await loadStylesheet('/dflip/css/dflip.min.css');
+        await loadStylesheet(`${import.meta.env.BASE_URL}dflip/css/dflip.min.css`);
 
         if (!window.jQuery) {
           await loadScript(
-            '/dflip/js/jquery.min.js',
+            `${import.meta.env.BASE_URL}dflip/js/jquery.min.js`,
             'data-dflip-jquery'
           );
         }
 
         if (cancelled) return;
 
-        window.dFlipLocation = '/dflip/';
+        window.dFlipLocation = `${import.meta.env.BASE_URL}dflip/`;
 
         window.option_df_2119 = {
           outline: [],
@@ -154,7 +154,7 @@ function ECatalogue() {
 
         if (!window.DFLIP) {
           await loadScript(
-            '/dflip/js/dflip.min.js',
+            `${import.meta.env.BASE_URL}dflip/js/dflip.min.js`,
             'data-dflip-js'
           );
         }
@@ -214,6 +214,7 @@ function ECatalogue() {
 }
 
 export default ECatalogue;
+
 
 
 
