@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: 'Can I request custom packaging or labeling for export?',
-    answer: 'Absolutely. We offer custom packaging, private labeling, and branding options tailored to the importer’s requirements.'
+    answer: 'Absolutely. We offer custom packaging, private labeling, and branding options tailored to the importerâ€™s requirements.'
   },
   {
     question: 'What is the minimum order quantity (MOQ) for exports?',

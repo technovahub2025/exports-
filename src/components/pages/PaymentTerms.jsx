@@ -66,7 +66,7 @@ function PaymentTerms() {
 
           <div className="payment-hero__breadcrumb">
             <Link to={withBasePath('/')}>Home</Link>
-            <span>›</span>
+            <span>â€º</span>
             <span>Payment Terms</span>
           </div>
         </div>

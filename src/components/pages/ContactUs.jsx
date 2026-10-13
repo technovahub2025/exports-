@@ -82,7 +82,7 @@ function ContactUs() {
             <h2>Get in touch with us</h2>
             <p>
               Get in touch with us today for inquiries, support, or
-              collaborations. We’re here to assist you with quick, reliable,
+              collaborations. Weâ€™re here to assist you with quick, reliable,
               and friendly service.
             </p>
           </div>

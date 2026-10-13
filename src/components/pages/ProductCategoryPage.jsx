@@ -7,16 +7,16 @@ const categoryData = {
   turmeric: {
     title: 'Turmeric',
     products: [
-      'Turmeric Powder – Deluxe',
-      'Turmeric Powder – Special'
+      'Turmeric Powder â€“ Deluxe',
+      'Turmeric Powder â€“ Special'
     ]
   },
 
   chilli: {
     title: 'Chilli',
     products: [
-      'Red Chilli Powder – Deluxe',
-      'Red Chilli Powder – Special',
+      'Red Chilli Powder â€“ Deluxe',
+      'Red Chilli Powder â€“ Special',
       'Extra Hot Red Chilli Powder',
       'Red Chilli Flakes',
       'Kashmiri Chilli Powder',
@@ -30,13 +30,13 @@ const categoryData = {
       'Coriander Powder',
       'Cumin Powder',
       'Black Pepper Powder',
-      'Black Pepper Powder – Compounded',
-      'White Pepper Powder – Compounded',
+      'Black Pepper Powder â€“ Compounded',
+      'White Pepper Powder â€“ Compounded',
       'White Pepper Powder',
       'Dry Garlic Powder',
       'Dry Ginger Powder',
       'Red Onion Powder',
-      'Asafoetida Powder – Compounded',
+      'Asafoetida Powder â€“ Compounded',
       'Dry Mustard Powder',
       'Dry Mango Powder'
     ]
@@ -49,16 +49,16 @@ const categoryData = {
       'Rasam Powder',
       'Curry Powder',
       'Garam Masala',
-      'Garam Masala – Classic',
-      'Garam Masala – No onion No Garlic',
+      'Garam Masala â€“ Classic',
+      'Garam Masala â€“ No onion No Garlic',
       'Chicken Masala',
-      'Chicken Masala – Classic',
+      'Chicken Masala â€“ Classic',
       'Chettinad Chicken Masala',
       'Kadai Chicken Masala',
       'Mutton Masala',
       'Meat Masala',
       'Kitchen King Masala',
-      'Kitchen King Masala – Classic',
+      'Kitchen King Masala â€“ Classic',
       'Tandoori Masala Tikka/Kebab/Chicken',
       'Paneer Butter Masala',
       'Pepper Masala (Veg & Non-veg)',
@@ -74,8 +74,8 @@ const categoryData = {
       'Fish Fry Masala',
       'Fish Curry Masala',
       'Magic Masala',
-      'Crispy Fry Mix – Classic',
-      'Crispy Fry Mix – Hot & Spicy'
+      'Crispy Fry Mix â€“ Classic',
+      'Crispy Fry Mix â€“ Hot & Spicy'
     ]
   },
 
@@ -84,12 +84,12 @@ const categoryData = {
     products: [
       // International Herbs & Seasonings
       'Aromat Seasoning',
-      'Peri Peri Masala – Hot',
-      'Peri Peri Masala – Mild',
+      'Peri Peri Masala â€“ Hot',
+      'Peri Peri Masala â€“ Mild',
       'Noodles Masala',
-      'Pasta Seasoning – Curry Flavour',
+      'Pasta Seasoning â€“ Curry Flavour',
       'Mexican Popcorn Cheese Seasoning',
-      'Mixed Herbs – Seasoning',
+      'Mixed Herbs â€“ Seasoning',
       'Pizza & Garlic Bread Seasoning',
       'Italian Seasoning',
       'Taco Seasoning',
@@ -114,7 +114,7 @@ const categoryData = {
       'Peri Peri Marinade',
       'Tandoori Marinade',
       'Spicy Grill Marinade',
-      'BBQ – Marinade',
+      'BBQ â€“ Marinade',
       'Kebab Marinade',
       'Breading Mixes'
     ]
