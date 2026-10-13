@@ -54,6 +54,25 @@ const pageRoutes = [
 ];
 
 
+function NormalizeTrailingSlash() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const { pathname, search, hash } = window.location;
+
+    if (pathname.length > 1 && pathname.endsWith('/')) {
+      const normalizedPath = pathname.replace(/\/+$/, '') || '/';
+
+      window.history.replaceState(
+        window.history.state,
+        '',
+        `${normalizedPath}${search}${hash}`
+      );
+    }
+  }, [location.pathname, location.search, location.hash]);
+
+  return null;
+}
 function ScrollToTop() {
   const { pathname, search, hash } = useLocation();
 
@@ -73,6 +92,7 @@ function ScrollToTop() {
 function App() {
   return (
     <>
+      <NormalizeTrailingSlash />
       <ScrollToTop />
 
       <Header />
@@ -109,5 +129,4 @@ function App() {
 }
 
 export default App;
-
 

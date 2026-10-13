@@ -391,19 +391,8 @@
   }
 ];
 
-export const getProductByPath = (path) => {
-  const normalizePath = (value) => {
-    const cleanPath = (value || "/").split("?")[0].split("#")[0];
-    return cleanPath.replace(/\/+$/, "") || "/";
-  };
-
-  const normalizedPath = normalizePath(path);
-
-  return products.find(
-    (product) => normalizePath(product.path) === normalizedPath
-  );
-};
-
+export const getProductByPath = (path) =>
+  products.find((product) => product.path === path);
 
 
 
