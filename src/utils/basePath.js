@@ -1,7 +1,13 @@
 export const BASE_PATH = '/test_exports';
 
-export const withBasePath = (path) =>
-  path === '/' ? `${BASE_PATH}/` : `${BASE_PATH}${path}`;
+const normalizeSlashes = (path) => path.replace(/\/{2,}/g, '/');
+
+export const withBasePath = (path = '/') => {
+  const basePath = BASE_PATH === '/' ? '' : BASE_PATH;
+  const joinedPath = `${basePath}/${path}`;
+
+  return normalizeSlashes(joinedPath);
+};
 
 export const stripBasePath = (path) => {
   if (path === BASE_PATH) return '/';
