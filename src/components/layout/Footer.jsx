@@ -1,5 +1,6 @@
 ﻿import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { BASE_PATH, withBasePath } from '../../utils/basePath.js';
 import './Footer.css';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
@@ -16,11 +17,6 @@ const products = [
   ['Coco Peat Blocks', '/coco-peat-blocks/'],
   ['Handicrafts', '/handicrafts/'],
 ];
-
-const BASE_PATH = '/test_exports';
-
-const withBasePath = (path) =>
-  path === '/' ? `${BASE_PATH}/` : `${BASE_PATH}${path}`;
 
 function Footer() {
   useEffect(() => {

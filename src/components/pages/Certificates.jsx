@@ -1,5 +1,7 @@
 ﻿import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FaGlobe, FaArrowUpRightFromSquare, FaFileLines } from 'react-icons/fa6';
+import { withBasePath } from '../../utils/basePath.js';
 import './Certificates.css';
 
 function Certificates() {
@@ -31,7 +33,7 @@ function Certificates() {
           </div>
           <h1>Certificates</h1>
           <div className="certificates-page__breadcrumb">
-            <a href="/">Home</a>
+            <Link to={withBasePath('/')}>Home</Link>
             <span>/</span>
             <span>Certificates</span>
           </div>

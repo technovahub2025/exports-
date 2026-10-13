@@ -1,6 +1,7 @@
 ﻿
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { BASE_PATH, withBasePath } from '../../utils/basePath.js';
 import './Header.css';
 
 const spiceCategories = [
@@ -18,11 +19,6 @@ const otherCategories = [
   { name: 'Coconut', path: '/coconut/' },
   { name: 'Handicrafts', path: '/handicrafts/' }
 ];
-
-const BASE_PATH = '/test_exports';
-
-const withBasePath = (path) =>
-  path === '/' ? `${BASE_PATH}/` : `${BASE_PATH}${path}`;
 
 function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);

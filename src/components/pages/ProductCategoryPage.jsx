@@ -1,5 +1,6 @@
 ﻿
 import { Link, useParams } from 'react-router-dom';
+import { withBasePath } from '../../utils/basePath.js';
 import './ProductCategoryPage.css';
 
 const categoryData = {
@@ -147,7 +148,7 @@ function ProductCategoryPage() {
     return (
       <main className="product-category-page">
         <h1>Category not found</h1>
-        <Link to="/our-products/">Browse all products</Link>
+        <Link to={withBasePath('/our-products/')}>Browse all products</Link>
       </main>
     );
   }
@@ -155,9 +156,9 @@ function ProductCategoryPage() {
   return (
     <main className="product-category-page">
       <div className="product-category-breadcrumb">
-        <Link to="/">Home</Link>
+        <Link to={withBasePath('/')}>Home</Link>
         <span>/</span>
-        <Link to="/our-products/">Our Products</Link>
+        <Link to={withBasePath('/our-products/')}>Our Products</Link>
         <span>/</span>
         <span>{data.title}</span>
       </div>
@@ -186,7 +187,7 @@ function ProductCategoryPage() {
             <h2>{name}</h2>
 
             <Link
-              to="/contact-us/"
+              to={withBasePath('/contact-us/')}
               className="product-category-card__link"
             >
               Enquire about this product
@@ -201,7 +202,7 @@ function ProductCategoryPage() {
       </p>
 
       <div className="product-category-back">
-        <Link to="/our-products/">
+        <Link to={withBasePath('/our-products/')}>
           ← Back to all products
         </Link>
       </div>

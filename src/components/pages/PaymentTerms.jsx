@@ -6,6 +6,7 @@ import {
   FaDollarSign,
   FaArrowRightLong,
 } from 'react-icons/fa6';
+import { withBasePath } from '../../utils/basePath.js';
 import './PaymentTerms.css';
 
 const paymentMethods = [
@@ -64,7 +65,7 @@ function PaymentTerms() {
           <h1>Payment Terms</h1>
 
           <div className="payment-hero__breadcrumb">
-            <Link to="/">Home</Link>
+            <Link to={withBasePath('/')}>Home</Link>
             <span>›</span>
             <span>Payment Terms</span>
           </div>

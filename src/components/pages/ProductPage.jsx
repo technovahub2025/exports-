@@ -2,11 +2,12 @@
 import { Link, useLocation } from 'react-router-dom';
 import { FaArrowLeft, FaGlobe } from 'react-icons/fa6';
 import { getProductByPath } from '../../data/productData.js';
+import { withBasePath, stripBasePath } from '../../utils/basePath.js';
 import './ProductPage.css';
 
 function ProductPage() {
   const location = useLocation();
-  const product = getProductByPath(location.pathname);
+  const product = getProductByPath(stripBasePath(location.pathname));
 
   useEffect(() => {
     const animatedElements = document.querySelectorAll(
@@ -62,7 +63,7 @@ function ProductPage() {
         <section className="product-not-found">
           <h1>Product Not Found</h1>
 
-          <Link to="/our-products/" className="product-back-link">
+          <Link to={withBasePath('/our-products/')} className="product-back-link">
             <FaArrowLeft />
             Back to Our Products
           </Link>
@@ -86,9 +87,9 @@ function ProductPage() {
           <h1>{product.name}</h1>
 
           <div className="product-page__breadcrumb">
-            <Link to="/">Home</Link>
+            <Link to={withBasePath('/')}>Home</Link>
             <span>/</span>
-            <Link to="/our-products/">Our Products</Link>
+            <Link to={withBasePath('/our-products/')}>Our Products</Link>
             <span>/</span>
             <span>{product.name}</span>
           </div>
@@ -99,7 +100,7 @@ function ProductPage() {
         <div className="product-details__container">
 
           <Link
-            to="/our-products/"
+            to={withBasePath('/our-products/')}
             className="product-details__back"
           >
             <FaArrowLeft />
@@ -135,7 +136,7 @@ function ProductPage() {
               </p>
 
               <Link
-                to="/contact-us/"
+                to={withBasePath('/contact-us/')}
                 className="product-details__button"
               >
                 Enquire Now
@@ -182,7 +183,7 @@ function ProductPage() {
           <div className="product-details__bottom">
 
             <Link
-              to="/our-products/"
+              to={withBasePath('/our-products/')}
               className="product-details__bottom-link"
             >
               <FaArrowLeft />

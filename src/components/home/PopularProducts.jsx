@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { withBasePath } from '../../utils/basePath.js';
 import './PopularProducts.css';
 
 const products = [
@@ -93,7 +94,7 @@ function PopularProducts() {
                       key={product.path}
                     >
                       <Link
-                        to={product.path}
+                        to={withBasePath(product.path)}
                         className="popular-products__image-link"
                       >
                         <div className="popular-products__image">
@@ -108,7 +109,7 @@ function PopularProducts() {
                         <h3>{product.name}</h3>
 
                         <Link
-                          to={product.path}
+                          to={withBasePath(product.path)}
                           className="popular-products__button"
                         >
                           View Product <span>→</span>
@@ -125,7 +126,7 @@ function PopularProducts() {
 
         <div className="popular-products__explore">
           <Link
-            to="/our-products/"
+            to={withBasePath('/our-products/')}
             className="popular-products__explore-button"
           >
             Explore All Products <span>&rarr;</span>

@@ -13,8 +13,7 @@ import Certificates from './components/pages/Certificates.jsx';
 import PaymentTerms from './components/pages/PaymentTerms.jsx';
 import FAQ from './components/pages/FAQ.jsx';
 import ContactUs from './components/pages/ContactUs.jsx';
-
-const BASE_PATH = '/test_exports';
+import { BASE_PATH, withBasePath } from './utils/basePath.js';
 
 const pageRoutes = [
   { path: '/', element: <Home /> },
@@ -53,9 +52,6 @@ const pageRoutes = [
   { path: '/contact-us/', element: <ContactUs /> },
   { path: '/e-catalogue/', element: <ECatalogue /> },
 ];
-
-const withBasePath = (path) =>
-  path === '/' ? `${BASE_PATH}/` : `${BASE_PATH}${path}`;
 
 function ScrollToTop() {
   const { pathname, search, hash } = useLocation();

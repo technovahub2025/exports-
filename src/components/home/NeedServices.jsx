@@ -1,4 +1,5 @@
 ﻿import { Link } from 'react-router-dom';
+import { withBasePath } from '../../utils/basePath.js';
 import './NeedServices.css';
 
 function NeedServices() {
@@ -23,7 +24,7 @@ function NeedServices() {
             Contact us!
           </p>
 
-          <Link to="/contact-us/" className="need-services__button">
+          <Link to={withBasePath('/contact-us/')} className="need-services__button">
             Contact us
             <span>?</span>
           </Link>

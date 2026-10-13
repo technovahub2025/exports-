@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { FaGlobe, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { products } from '../../data/productData.js';
+import { withBasePath } from '../../utils/basePath.js';
 import './OurProducts.css';
 
 const categorySections = [
@@ -58,7 +59,7 @@ function OurProducts() {
           <h1>Our Popular Products</h1>
 
           <div className="our-products-breadcrumb">
-            <Link to="/">Home</Link>
+            <Link to={withBasePath('/')}>Home</Link>
             <span>/</span>
             <span>Our Products</span>
           </div>
@@ -106,7 +107,7 @@ function OurProducts() {
           ].map((category) => (
             <Link
               key={category.path}
-              to={category.path}
+              to={withBasePath(category.path)}
               className="product-range-overview__card"
             >
               <span>{category.name}</span>
@@ -161,7 +162,7 @@ function OurProducts() {
                   }}
                 >
                   <Link
-                    to={product.path}
+                    to={withBasePath(product.path)}
                     className="our-product-card__image"
                   >
                     <img
@@ -187,7 +188,7 @@ function OurProducts() {
                     <p>{product.description}</p>
 
                     <Link
-                      to={product.path}
+                      to={withBasePath(product.path)}
                       className="our-product-card__button"
                     >
                       View Product

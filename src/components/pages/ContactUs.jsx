@@ -1,4 +1,5 @@
 ﻿import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   FaGlobe,
   FaLocationDot,
@@ -7,6 +8,7 @@ import {
   FaClock,
   FaArrowRight
 } from 'react-icons/fa6';
+import { withBasePath } from '../../utils/basePath.js';
 import './ContactUs.css';
 
 const contactInfo = [
@@ -63,7 +65,7 @@ function ContactUs() {
           </div>
           <h1>Get in touch with us</h1>
           <div className="contact-page__breadcrumb">
-            <a href="/">Home</a>
+            <Link to={withBasePath('/')}>Home</Link>
             <span>/</span>
             <span>Contact Us</span>
           </div>

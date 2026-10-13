@@ -1,6 +1,7 @@
 ﻿import { useEffect, useState } from 'react';
 import './Hero.css';
 import { FaWhatsapp } from 'react-icons/fa';
+import { withBasePath } from '../../utils/basePath.js';
 
 const slides = [
   {
@@ -75,7 +76,7 @@ function Hero() {
 
           <div className="hero__bottom">
 
-            <a href="/contact-us/" className="hero__contact-button">
+            <a href={withBasePath('/contact-us/')} className="hero__contact-button">
               <span>Contact Us</span>
               <span>↗</span>
             </a>

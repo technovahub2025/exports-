@@ -1,5 +1,7 @@
 ﻿import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaGlobe, FaPlus, FaMinus } from 'react-icons/fa6';
+import { withBasePath } from '../../utils/basePath.js';
 import './FAQ.css';
 
 const faqs = [
@@ -70,7 +72,7 @@ function FAQ() {
           <h1>Frequently Asked Question</h1>
 
           <div className="faq-page__breadcrumb">
-            <a href="/">Home</a>
+            <Link to={withBasePath('/')}>Home</Link>
             <span>/</span>
             <span>FAQ</span>
           </div>
