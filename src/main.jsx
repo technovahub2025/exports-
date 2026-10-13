@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 import './styles/global.css';
 
-const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '');
+const routerBasename = '/test_exports';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
