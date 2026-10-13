@@ -31,7 +31,12 @@ function Header() {
   const goToAboutCompany = () => {
     closeMobile();
 
-    if (window.location.pathname === '/') {
+    const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+    if (
+      window.location.pathname === `${basePath}/` ||
+      window.location.pathname === basePath
+    ) {
       document.getElementById('about-company')?.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
@@ -39,7 +44,7 @@ function Header() {
       return;
     }
 
-    window.location.href = '/#about-company';
+    window.location.href = `${basePath}/#about-company`;
   };
 
   const renderCategoryLinks = (categories, mobile = false) =>
@@ -261,3 +266,4 @@ function Header() {
 }
 
 export default Header;
+
