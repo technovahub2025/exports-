@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   FaGlobe,
@@ -6,7 +6,7 @@ import {
   FaDollarSign,
   FaArrowRightLong,
 } from 'react-icons/fa6';
-import { withBasePath } from '../../utils/basePath.js';
+import { routerPath as withBasePath } from '../../utils/basePath.js';
 import './PaymentTerms.css';
 
 const paymentMethods = [
@@ -66,7 +66,7 @@ function PaymentTerms() {
 
           <div className="payment-hero__breadcrumb">
             <Link to={withBasePath('/')}>Home</Link>
-            <span>›</span>
+            <span>�</span>
             <span>Payment Terms</span>
           </div>
         </div>
@@ -184,6 +184,7 @@ function PaymentTerms() {
 }
 
 export default PaymentTerms;
+
 
 
 

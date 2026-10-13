@@ -1,8 +1,8 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGlobe, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { products } from '../../data/productData.js';
-import { withBasePath } from '../../utils/basePath.js';
+import { routerPath as withBasePath } from '../../utils/basePath.js';
 import './OurProducts.css';
 
 const categorySections = [
@@ -111,7 +111,7 @@ function OurProducts() {
               className="product-range-overview__card"
             >
               <span>{category.name}</span>
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">?</span>
             </Link>
           ))}
         </div>
@@ -211,6 +211,7 @@ function OurProducts() {
 }
 
 export default OurProducts;
+
 
 
 

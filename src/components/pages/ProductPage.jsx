@@ -2,7 +2,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { FaArrowLeft, FaGlobe } from 'react-icons/fa6';
 import { getProductByPath } from '../../data/productData.js';
-import { withBasePath, stripBasePath } from '../../utils/basePath.js';
+import { routerPath as withBasePath, stripBasePath } from '../../utils/basePath.js';
 import './ProductPage.css';
 
 function ProductPage() {

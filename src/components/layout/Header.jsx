@@ -1,7 +1,7 @@
 ﻿
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { BASE_PATH, withBasePath } from '../../utils/basePath.js';
+import { BASE_PATH, routerPath as withBasePath } from '../../utils/basePath.js';
 import './Header.css';
 
 const spiceCategories = [

@@ -1,7 +1,7 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGlobe, FaPlus, FaMinus } from 'react-icons/fa6';
-import { withBasePath } from '../../utils/basePath.js';
+import { routerPath as withBasePath } from '../../utils/basePath.js';
 import './FAQ.css';
 
 const faqs = [
@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: 'Can I request custom packaging or labeling for export?',
-    answer: 'Absolutely. We offer custom packaging, private labeling, and branding options tailored to the importer’s requirements.'
+    answer: 'Absolutely. We offer custom packaging, private labeling, and branding options tailored to the importer�s requirements.'
   },
   {
     question: 'What is the minimum order quantity (MOQ) for exports?',
@@ -139,6 +139,7 @@ function FAQ() {
 }
 
 export default FAQ;
+
 
 
 

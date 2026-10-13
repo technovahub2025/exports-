@@ -13,7 +13,7 @@ import Certificates from './components/pages/Certificates.jsx';
 import PaymentTerms from './components/pages/PaymentTerms.jsx';
 import FAQ from './components/pages/FAQ.jsx';
 import ContactUs from './components/pages/ContactUs.jsx';
-import { BASE_PATH, withBasePath } from './utils/basePath.js';
+import { routerPath } from './utils/basePath.js';
 
 const pageRoutes = [
   { path: '/', element: <Home /> },
@@ -86,14 +86,6 @@ function App() {
           path="/about-us/"
           element={<Navigate to="/#about-company" replace />}
         />
-        <Route
-          path={`${BASE_PATH}/about-us`}
-          element={<Navigate to={`${BASE_PATH}/#about-company`} replace />}
-        />
-        <Route
-          path={`${BASE_PATH}/about-us/`}
-          element={<Navigate to={`${BASE_PATH}/#about-company`} replace />}
-        />
 
         {/* Dynamic Route Generator supporting slash & no-slash fallback */}
         {pageRoutes.flatMap(({ path, element }) => {
@@ -103,15 +95,11 @@ function App() {
             // Standard Paths
             <Route key={path} path={path} element={element} />,
             <Route key={`${path}-no-slash`} path={cleanPath} element={element} />,
-            
-            // Base Path Variations
-            <Route key={withBasePath(path)} path={withBasePath(path)} element={element} />,
-            <Route key={`${withBasePath(path)}-no-slash`} path={withBasePath(cleanPath)} element={element} />
           ];
         })}
 
         {/* Safe Catch-All targeting base path */}
-        <Route path="*" element={<Navigate to={BASE_PATH || "/"} replace />} />
+        <Route path="*" element={<Navigate to={routerPath('/')} replace />} />
       </Routes>
 
       <Footer />

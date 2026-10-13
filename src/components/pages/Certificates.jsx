@@ -1,7 +1,7 @@
-﻿import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGlobe, FaArrowUpRightFromSquare, FaFileLines } from 'react-icons/fa6';
-import { withBasePath } from '../../utils/basePath.js';
+import { routerPath as withBasePath } from '../../utils/basePath.js';
 import './Certificates.css';
 
 function Certificates() {
@@ -54,6 +54,7 @@ function Certificates() {
 }
 
 export default Certificates;
+
 
 
 

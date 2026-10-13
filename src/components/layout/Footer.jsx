@@ -1,6 +1,6 @@
 ﻿import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BASE_PATH, withBasePath } from '../../utils/basePath.js';
+import { routerPath as withBasePath } from '../../utils/basePath.js';
 import './Footer.css';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
@@ -102,7 +102,7 @@ function Footer() {
 
             <ul>
               <li><Link to={withBasePath('/')}>Home</Link></li>
-              <li><Link to={`${BASE_PATH}/#about-company`}>About Us</Link></li>
+              <li><Link to={withBasePath('/#about-company')}>About Us</Link></li>
               <li><Link to={withBasePath('/our-products/')}>Our Products</Link></li>
               <li><Link to={withBasePath('/certificates/')}>Certificates</Link></li>
               <li><Link to={withBasePath('/payment-terms/')}>Payment Terms</Link></li>

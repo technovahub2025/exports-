@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { withBasePath } from '../../utils/basePath.js';
+import { routerPath as withBasePath } from '../../utils/basePath.js';
 import './PopularProducts.css';
 
 const products = [
@@ -139,6 +139,7 @@ function PopularProducts() {
 }
 
 export default PopularProducts;
+
 
 
 

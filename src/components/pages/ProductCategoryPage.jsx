@@ -1,22 +1,22 @@
-Ôªø
+
 import { Link, useParams } from 'react-router-dom';
-import { withBasePath } from '../../utils/basePath.js';
+import { routerPath as withBasePath } from '../../utils/basePath.js';
 import './ProductCategoryPage.css';
 
 const categoryData = {
   turmeric: {
     title: 'Turmeric',
     products: [
-      'Turmeric Powder ‚Äì Deluxe',
-      'Turmeric Powder ‚Äì Special'
+      'Turmeric Powder ñ Deluxe',
+      'Turmeric Powder ñ Special'
     ]
   },
 
   chilli: {
     title: 'Chilli',
     products: [
-      'Red Chilli Powder ‚Äì Deluxe',
-      'Red Chilli Powder ‚Äì Special',
+      'Red Chilli Powder ñ Deluxe',
+      'Red Chilli Powder ñ Special',
       'Extra Hot Red Chilli Powder',
       'Red Chilli Flakes',
       'Kashmiri Chilli Powder',
@@ -30,13 +30,13 @@ const categoryData = {
       'Coriander Powder',
       'Cumin Powder',
       'Black Pepper Powder',
-      'Black Pepper Powder ‚Äì Compounded',
-      'White Pepper Powder ‚Äì Compounded',
+      'Black Pepper Powder ñ Compounded',
+      'White Pepper Powder ñ Compounded',
       'White Pepper Powder',
       'Dry Garlic Powder',
       'Dry Ginger Powder',
       'Red Onion Powder',
-      'Asafoetida Powder ‚Äì Compounded',
+      'Asafoetida Powder ñ Compounded',
       'Dry Mustard Powder',
       'Dry Mango Powder'
     ]
@@ -49,16 +49,16 @@ const categoryData = {
       'Rasam Powder',
       'Curry Powder',
       'Garam Masala',
-      'Garam Masala ‚Äì Classic',
-      'Garam Masala ‚Äì No onion No Garlic',
+      'Garam Masala ñ Classic',
+      'Garam Masala ñ No onion No Garlic',
       'Chicken Masala',
-      'Chicken Masala ‚Äì Classic',
+      'Chicken Masala ñ Classic',
       'Chettinad Chicken Masala',
       'Kadai Chicken Masala',
       'Mutton Masala',
       'Meat Masala',
       'Kitchen King Masala',
-      'Kitchen King Masala ‚Äì Classic',
+      'Kitchen King Masala ñ Classic',
       'Tandoori Masala Tikka/Kebab/Chicken',
       'Paneer Butter Masala',
       'Pepper Masala (Veg & Non-veg)',
@@ -74,8 +74,8 @@ const categoryData = {
       'Fish Fry Masala',
       'Fish Curry Masala',
       'Magic Masala',
-      'Crispy Fry Mix ‚Äì Classic',
-      'Crispy Fry Mix ‚Äì Hot & Spicy'
+      'Crispy Fry Mix ñ Classic',
+      'Crispy Fry Mix ñ Hot & Spicy'
     ]
   },
 
@@ -84,12 +84,12 @@ const categoryData = {
     products: [
       // International Herbs & Seasonings
       'Aromat Seasoning',
-      'Peri Peri Masala ‚Äì Hot',
-      'Peri Peri Masala ‚Äì Mild',
+      'Peri Peri Masala ñ Hot',
+      'Peri Peri Masala ñ Mild',
       'Noodles Masala',
-      'Pasta Seasoning ‚Äì Curry Flavour',
+      'Pasta Seasoning ñ Curry Flavour',
       'Mexican Popcorn Cheese Seasoning',
-      'Mixed Herbs ‚Äì Seasoning',
+      'Mixed Herbs ñ Seasoning',
       'Pizza & Garlic Bread Seasoning',
       'Italian Seasoning',
       'Taco Seasoning',
@@ -114,7 +114,7 @@ const categoryData = {
       'Peri Peri Marinade',
       'Tandoori Marinade',
       'Spicy Grill Marinade',
-      'BBQ ‚Äì Marinade',
+      'BBQ ñ Marinade',
       'Kebab Marinade',
       'Breading Mixes'
     ]
@@ -203,7 +203,7 @@ function ProductCategoryPage() {
 
       <div className="product-category-back">
         <Link to={withBasePath('/our-products/')}>
-          ‚Üê Back to all products
+          ? Back to all products
         </Link>
       </div>
     </main>
@@ -211,3 +211,4 @@ function ProductCategoryPage() {
 }
 
 export default ProductCategoryPage;
+

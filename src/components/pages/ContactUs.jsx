@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   FaGlobe,
@@ -8,7 +8,7 @@ import {
   FaClock,
   FaArrowRight
 } from 'react-icons/fa6';
-import { withBasePath } from '../../utils/basePath.js';
+import { routerPath as withBasePath } from '../../utils/basePath.js';
 import './ContactUs.css';
 
 const contactInfo = [
@@ -82,7 +82,7 @@ function ContactUs() {
             <h2>Get in touch with us</h2>
             <p>
               Get in touch with us today for inquiries, support, or
-              collaborations. We’re here to assist you with quick, reliable,
+              collaborations. We�re here to assist you with quick, reliable,
               and friendly service.
             </p>
           </div>
@@ -178,6 +178,7 @@ function ContactUs() {
 }
 
 export default ContactUs;
+
 
 
 
