@@ -7,7 +7,10 @@ import './ProductPage.css';
 
 function ProductPage() {
   const location = useLocation();
-  const product = getProductByPath(stripBasePath(location.pathname));
+  const productPath = stripBasePath(location.pathname);
+  const normalizedProductPath =
+    productPath === '/' ? '/' : `/${productPath.split('/').filter(Boolean).join('/')}/`;
+  const product = getProductByPath(normalizedProductPath);
 
   useEffect(() => {
     const animatedElements = document.querySelectorAll(
@@ -200,6 +203,7 @@ function ProductPage() {
 }
 
 export default ProductPage;
+
 
 
 
